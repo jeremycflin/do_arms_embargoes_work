@@ -1,0 +1,320 @@
+#intro{
+  text-align: center;
+  font-family: Georgia;
+  width: 400px;
+  font-size: 1.5em;
+  margin-left: 190%;
+}
+.container {
+  width: 1200px;
+}
+
+#graphic {
+  padding-top: 60px;
+}
+
+svg{
+ /* outline: 1px solid black;*/
+}
+
+#sections {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  top: 0px;
+  /*z-index: 90;*/
+  padding-bottom: 200px;
+  margin-right: 100px;
+}
+
+.step {
+  margin-bottom: 600px;
+  font-family: "Georgia","Crimson Text","Roboto","TiemposTextWeb-Regular","Georgia";
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.3em;
+ /* padding-left: 5em;*/
+  /*color: #767678;*/
+  /*outline: 1px solid red;*/
+}
+
+.step a{
+  text-decoration: none;
+  border-bottom: 2px solid #B21F26;
+  color:black;
+}
+
+.openvis-title{
+  font-family: Arial,"Roboto","Libre Baskerville","Georgia";
+  font-size: 60px;
+  fill:white;
+}
+
+#sections .title {
+  font-family: Arial,Helvetica,"san-serif";
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #262626;
+  line-height: 1.2em;
+  text-transform: uppercase;
+}
+
+#extra-space {
+  height: 300px;
+}
+
+#vis {
+  display: inline-block;
+  position: fixed;
+  top: 60px;
+  z-index: 10;
+  margin-left: 0;
+  /* height: 600px; */
+  /* width: 600px; */
+  /* background-color: #ddd; */
+}
+
+#vis .title {
+  font-size:50px;
+  text-anchor: middle;
+}
+
+#vis .sub-title {
+  font-size:30px;
+  text-anchor: middle;
+}
+
+.axis_lable{
+   font-family:"Georgia";
+   opacity:0;
+  /*text-transform: uppercase;*/
+}
+
+
+.axis path,
+.axis line{
+  fill: none;
+  shape-rendering: crispEdges;
+  stroke: black;
+  /*stroke-width: 1;*/
+}
+
+.grid path{
+  stroke-width:0;
+}
+
+
+
+.axis{
+  font-size: 13px;
+}
+
+
+
+.highlight {
+  fill: #008080;
+  font-weight: bold;
+}
+
+.cough-arrow {
+  stroke: #000;
+  stroke-width: 4px;
+
+}
+
+.lineDashArray {
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-width: 2px;
+ /* stroke-dasharray: 15000,15000;
+  stroke-dashoffset: 15000;*/
+
+}
+
+.line {
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-width: 2.5px;
+  opacity:0;
+  stroke:black;
+  /*stroke-dasharray: 15000,15000;*/
+}
+
+.myanmarLine{
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-width: 2.5px;
+  stroke:black;
+  stroke-dasharray: 15000,15000;
+  stroke-dashoffset: 20000;
+}
+
+.syriaLine{
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-width: 2.5px;
+  stroke:black;
+  stroke-dasharray: 15000,15000;
+  stroke-dashoffset: 20000;
+}
+
+.koreaLine{
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-width: 2.5px;
+  stroke:black;
+  stroke-dasharray: 15000,15000;
+  stroke-dashoffset: 20000;
+}
+
+.iranLine{
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-width: 2.5px;
+  stroke:black;
+  stroke-dasharray: 15000,15000;
+  stroke-dashoffset: 20000;
+}
+
+#chinaLine{
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-width: 2.5px;
+  stroke:black;
+  stroke-dasharray: 15000,15000;
+  stroke-dashoffset: 20000;
+}
+
+/*#china{
+  background-color:rgba(190, 108, 141,.6);
+  color:black;
+}
+
+#korea{
+  background:rgb(186, 215, 46);
+  color:black;
+  opacity:.7;
+}
+
+#iran{
+  background:rgba(254,194,65,.8);
+  color:black;
+  opacity:.7;
+}
+
+#myanmar{
+  background:#8babe5;
+  color:black;
+  opacity:.7;
+}
+
+#syria{
+  background:rgba(157,91,48,.4);
+  color:black;
+  opacity:.9;
+}
+*/
+.layers{
+  stroke:white;
+  stroke-width:0;
+}
+
+.annotation{
+  /* text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;*/
+  font-weight: 500;
+}
+
+/*.axis path,
+.axis line {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+
+.grid path{
+  stroke-width:1;
+}*/
+
+.grid .tick{
+  stroke-width:1px;
+  stroke-opacity:0.9;
+  shape-rendering: crispEdges;
+  /*stroke-dasharray: 2,2;*/
+  color:black;
+}
+
+path { 
+  stroke: black;
+  stroke-width: 1px;
+  fill: none;
+}
+
+path.arrow, #arrowhead {
+  fill: none;
+  stroke: black;
+}
+
+#landing{
+  background-image: url(../assets/test2.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 900px;
+  width:auto;
+  padding:0;
+  background-size: cover;
+}
+
+.mainTitle{
+  font-family: "Roboto","TiemposTextWeb-Regular","Georgia";
+  text-transform: uppercase;
+  font-size: 5em;
+  color:white;
+  margin-top: 2em;
+  max-width: 300px;
+  margin-left: 1.7em;
+ /* margin-right: auto;*/
+}
+
+.byline{
+  color:#d3d3d3;
+  margin-left: 5.5em;
+  font-size: 1.6em;
+  font-family: "arial";
+  text-transform: uppercase;
+}
+
+.highlightTitle{
+  color:#ffe24b;
+}
+
+span{
+  font-weight: 700;
+}
+
+.EU{
+  background-color: #B9E5FB;
+}
+
+.russia{
+  background-color: #FFC9B2;
+}
+
+.china{
+  background-color: #ff99ad;
+}
+
+.annotationCircle{
+  stroke:black;
+  stroke-width:2;
+  stroke-dasharray:2,2;
+  fill:none;
+}

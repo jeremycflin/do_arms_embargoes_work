@@ -1,0 +1,829 @@
+recipient,country,year,value
+China,EU,1980,7
+China,EU,1981,2
+China,EU,1982,15
+China,EU,1983,27
+China,EU,1984,15
+China,EU,1985,17
+China,EU,1986,17
+China,EU,1987,53
+China,EU,1988,55
+China,EU,1989,95
+China,EU,1990,76
+China,EU,1991,104
+China,EU,1992,101
+China,EU,1993,129
+China,EU,1994,129
+China,EU,1995,153
+China,EU,1996,159
+China,EU,1997,105
+China,EU,1998,130
+China,EU,1999,202
+China,EU,2000,200
+China,EU,2001,217
+China,EU,2002,242
+China,EU,2003,230
+China,EU,2004,330
+China,EU,2005,304
+China,EU,2006,235
+China,EU,2007,240
+China,EU,2008,244
+China,EU,2009,212
+China,EU,2010,236
+China,EU,2011,251
+China,EU,2012,266
+China,EU,2013,261
+China,EU,2014,253
+China,EU,2015,225
+China,Others,1980,0
+China,Others,1981,0
+China,Others,1982,0
+China,Others,1983,0
+China,Others,1984,59
+China,Others,1985,98
+China,Others,1986,0
+China,Others,1987,0
+China,Others,1988,16
+China,Others,1989,15
+China,Others,1990,139
+China,Others,1991,288
+China,Others,1992,46
+China,Others,1993,46
+China,Others,1994,74
+China,Others,1995,30
+China,Others,1996,95
+China,Others,1997,64
+China,Others,1998,79
+China,Others,1999,121
+China,Others,2000,122
+China,Others,2001,134
+China,Others,2002,123
+China,Others,2003,68
+China,Others,2004,98
+China,Others,2005,147
+China,Others,2006,193
+China,Others,2007,129
+China,Others,2008,119
+China,Others,2009,93
+China,Others,2010,65
+China,Others,2011,65
+China,Others,2012,697
+China,Others,2013,321
+China,Others,2014,217
+China,Others,2015,165
+China,Russia,1980,0
+China,Russia,1981,0
+China,Russia,1982,0
+China,Russia,1983,0
+China,Russia,1984,0
+China,Russia,1985,0
+China,Russia,1986,0
+China,Russia,1987,0
+China,Russia,1988,0
+China,Russia,1989,0
+China,Russia,1990,0
+China,Russia,1991,0
+China,Russia,1992,1023
+China,Russia,1993,1011
+China,Russia,1994,72
+China,Russia,1995,498
+China,Russia,1996,1241
+China,Russia,1997,732
+China,Russia,1998,174
+China,Russia,1999,1462
+China,Russia,2000,2231
+China,Russia,2001,2484
+China,Russia,2002,2526
+China,Russia,2003,2076
+China,Russia,2004,2888
+China,Russia,2005,3107
+China,Russia,2006,2472
+China,Russia,2007,1324
+China,Russia,2008,1529
+China,Russia,2009,1102
+China,Russia,2010,744
+China,Russia,2011,811
+China,Russia,2012,741
+China,Russia,2013,870
+China,Russia,2014,714
+China,Russia,2015,824
+China,Total,1980,7
+China,Total,1981,2
+China,Total,1982,15
+China,Total,1983,27
+China,Total,1984,74
+China,Total,1985,115
+China,Total,1986,17
+China,Total,1987,53
+China,Total,1988,71
+China,Total,1989,110
+China,Total,1990,215
+China,Total,1991,392
+China,Total,1992,1170
+China,Total,1993,1186
+China,Total,1994,275
+China,Total,1995,681
+China,Total,1996,1495
+China,Total,1997,901
+China,Total,1998,383
+China,Total,1999,1785
+China,Total,2000,2553
+China,Total,2001,2835
+China,Total,2002,2891
+China,Total,2003,2374
+China,Total,2004,3316
+China,Total,2005,3558
+China,Total,2006,2900
+China,Total,2007,1693
+China,Total,2008,1892
+China,Total,2009,1407
+China,Total,2010,1045
+China,Total,2011,1127
+China,Total,2012,1704
+China,Total,2013,1452
+China,Total,2014,1184
+China,Total,2015,1214
+Iran,EU,1980,44
+Iran,EU,1981,350
+Iran,EU,1982,0
+Iran,EU,1983,0
+Iran,EU,1984,145
+Iran,EU,1985,92
+Iran,EU,1986,0
+Iran,EU,1987,0
+Iran,EU,1988,15
+Iran,EU,1989,15
+Iran,EU,1990,15
+Iran,EU,1991,15
+Iran,EU,1992,0
+Iran,EU,1993,8
+Iran,EU,1994,8
+Iran,EU,1995,15
+Iran,EU,1996,1
+Iran,EU,1997,0
+Iran,EU,1998,0
+Iran,EU,1999,0
+Iran,EU,2000,0
+Iran,EU,2001,0
+Iran,EU,2002,0
+Iran,EU,2003,0
+Iran,EU,2004,0
+Iran,EU,2005,0
+Iran,EU,2006,0
+Iran,EU,2007,0
+Iran,EU,2008,0
+Iran,EU,2009,0
+Iran,EU,2010,0
+Iran,EU,2011,0
+Iran,EU,2012,0
+Iran,EU,2013,0
+Iran,EU,2014,0
+Iran,EU,2015,0
+Iran,Others,1980,234
+Iran,Others,1981,136
+Iran,Others,1982,349
+Iran,Others,1983,291
+Iran,Others,1984,153
+Iran,Others,1985,429
+Iran,Others,1986,287
+Iran,Others,1987,294
+Iran,Others,1988,279
+Iran,Others,1989,117
+Iran,Others,1990,
+Iran,Others,1991,912
+Iran,Others,1992,109
+Iran,Others,1993,117
+Iran,Others,1994,89
+Iran,Others,1995,177
+Iran,Others,1996,4
+Iran,Others,1997,4
+Iran,Others,1998,54
+Iran,Others,1999,0
+Iran,Others,2000,8
+Iran,Others,2001,147
+Iran,Others,2002,262
+Iran,Others,2003,114
+Iran,Others,2004,27
+Iran,Others,2005,0
+Iran,Others,2006,0
+Iran,Others,2007,0
+Iran,Others,2008,0
+Iran,Others,2009,0
+Iran,Others,2010,0
+Iran,Others,2011,15
+Iran,Others,2012,0
+Iran,Others,2013,0
+Iran,Others,2014,0
+Iran,Others,2015,0
+Iran,Russia,1980,0
+Iran,Russia,1981,0
+Iran,Russia,1982,0
+Iran,Russia,1983,0
+Iran,Russia,1984,0
+Iran,Russia,1985,0
+Iran,Russia,1986,0
+Iran,Russia,1987,0
+Iran,Russia,1988,0
+Iran,Russia,1989,0
+Iran,Russia,1990,0
+Iran,Russia,1991,0
+Iran,Russia,1992,220
+Iran,Russia,1993,559
+Iran,Russia,1994,83
+Iran,Russia,1995,47
+Iran,Russia,1996,289
+Iran,Russia,1997,119
+Iran,Russia,1998,256
+Iran,Russia,1999,258
+Iran,Russia,2000,341
+Iran,Russia,2001,298
+Iran,Russia,2002,92
+Iran,Russia,2003,85
+Iran,Russia,2004,15
+Iran,Russia,2005,15
+Iran,Russia,2006,368
+Iran,Russia,2007,283
+Iran,Russia,2008,15
+Iran,Russia,2009,15
+Iran,Russia,2010,41
+Iran,Russia,2011,33
+Iran,Russia,2012,15
+Iran,Russia,2013,22
+Iran,Russia,2014,4
+Iran,Russia,2015,4
+Iran,China,1980,0
+Iran,China,1981,1
+Iran,China,1982,193
+Iran,China,1983,219
+Iran,China,1984,180
+Iran,China,1985,126
+Iran,China,1986,516
+Iran,China,1987,539
+Iran,China,1988,184
+Iran,China,1989,60
+Iran,China,1990,87
+Iran,China,1991,96
+Iran,China,1992,103
+Iran,China,1993,304
+Iran,China,1994,274
+Iran,China,1995,58
+Iran,China,1996,320
+Iran,China,1997,54
+Iran,China,1998,70
+Iran,China,1999,64
+Iran,China,2000,69
+Iran,China,2001,80
+Iran,China,2002,81
+Iran,China,2003,84
+Iran,China,2004,80
+Iran,China,2005,43
+Iran,China,2006,54
+Iran,China,2007,47
+Iran,China,2008,47
+Iran,China,2009,47
+Iran,China,2010,62
+Iran,China,2011,55
+Iran,China,2012,32
+Iran,China,2013,9
+Iran,China,2014,9
+Iran,China,2015,9
+Iran,Total,1980,278
+Iran,Total,1981,487
+Iran,Total,1982,542
+Iran,Total,1983,510
+Iran,Total,1984,478
+Iran,Total,1985,647
+Iran,Total,1986,803
+Iran,Total,1987,833
+Iran,Total,1988,478
+Iran,Total,1989,192
+Iran,Total,1990,87
+Iran,Total,1991,1008
+Iran,Total,1992,432
+Iran,Total,1993,980
+Iran,Total,1994,446
+Iran,Total,1995,282
+Iran,Total,1996,613
+Iran,Total,1997,177
+Iran,Total,1998,380
+Iran,Total,1999,322
+Iran,Total,2000,418
+Iran,Total,2001,525
+Iran,Total,2002,435
+Iran,Total,2003,283
+Iran,Total,2004,122
+Iran,Total,2005,58
+Iran,Total,2006,422
+Iran,Total,2007,330
+Iran,Total,2008,62
+Iran,Total,2009,62
+Iran,Total,2010,103
+Iran,Total,2011,103
+Iran,Total,2012,47
+Iran,Total,2013,31
+Iran,Total,2014,13
+Iran,Total,2015,13
+North Korea,Others,1980,173
+North Korea,Others,1981,206
+North Korea,Others,1982,242
+North Korea,Others,1983,432
+North Korea,Others,1984,206
+North Korea,Others,1985,1011
+North Korea,Others,1986,873
+North Korea,Others,1987,625
+North Korea,Others,1988,581
+North Korea,Others,1989,436
+North Korea,Others,1990,193
+North Korea,Others,1991,53
+North Korea,Others,1992,0
+North Korea,Others,1993,0
+North Korea,Others,1994,0
+North Korea,Others,1995,7
+North Korea,Others,1996,0
+North Korea,Others,1997,0
+North Korea,Others,1998,0
+North Korea,Others,1999,170
+North Korea,Others,2000,0
+North Korea,Others,2001,0
+North Korea,Others,2002,0
+North Korea,Others,2003,0
+North Korea,Others,2004,0
+North Korea,Others,2005,0
+North Korea,Others,2006,0
+North Korea,Others,2007,0
+North Korea,Others,2008,0
+North Korea,Others,2009,0
+North Korea,Others,2010,0
+North Korea,Others,2011,0
+North Korea,Others,2012,0
+North Korea,Others,2013,0
+North Korea,Others,2014,0
+North Korea,Others,2015,0
+North Korea,Russia,1980,0
+North Korea,Russia,1981,0
+North Korea,Russia,1982,0
+North Korea,Russia,1983,0
+North Korea,Russia,1984,0
+North Korea,Russia,1985,0
+North Korea,Russia,1986,0
+North Korea,Russia,1987,0
+North Korea,Russia,1988,0
+North Korea,Russia,1989,0
+North Korea,Russia,1990,0
+North Korea,Russia,1991,0
+North Korea,Russia,1992,126
+North Korea,Russia,1993,38
+North Korea,Russia,1994,30
+North Korea,Russia,1995,87
+North Korea,Russia,1996,78
+North Korea,Russia,1997,9
+North Korea,Russia,1998,9
+North Korea,Russia,1999,9
+North Korea,Russia,2000,18
+North Korea,Russia,2001,28
+North Korea,Russia,2002,9
+North Korea,Russia,2003,8
+North Korea,Russia,2004,8
+North Korea,Russia,2005,5
+North Korea,Russia,2006,15
+North Korea,Russia,2007,5
+North Korea,Russia,2008,5
+North Korea,Russia,2009,4
+North Korea,Russia,2010,1
+North Korea,Russia,2011,0
+North Korea,Russia,2012,0
+North Korea,Russia,2013,0
+North Korea,Russia,2014,0
+North Korea,Russia,2015,0
+North Korea,China,1980,243
+North Korea,China,1981,57
+North Korea,China,1982,307
+North Korea,China,1983,79
+North Korea,China,1984,77
+North Korea,China,1985,29
+North Korea,China,1986,224
+North Korea,China,1987,224
+North Korea,China,1988,273
+North Korea,China,1989,160
+North Korea,China,1990,103
+North Korea,China,1991,145
+North Korea,China,1992,11
+North Korea,China,1993,55
+North Korea,China,1994,5
+North Korea,China,1995,50
+North Korea,China,1996,0
+North Korea,China,1997,0
+North Korea,China,1998,0
+North Korea,China,1999,0
+North Korea,China,2000,0
+North Korea,China,2001,0
+North Korea,China,2002,0
+North Korea,China,2003,0
+North Korea,China,2004,0
+North Korea,China,2005,0
+North Korea,China,2006,0
+North Korea,China,2007,0
+North Korea,China,2008,0
+North Korea,China,2009,0
+North Korea,China,2010,0
+North Korea,China,2011,0
+North Korea,China,2012,0
+North Korea,China,2013,0
+North Korea,China,2014,0
+North Korea,China,2015,0
+North Korea,Total,1980,416
+North Korea,Total,1981,263
+North Korea,Total,1982,549
+North Korea,Total,1983,511
+North Korea,Total,1984,283
+North Korea,Total,1985,1040
+North Korea,Total,1986,1097
+North Korea,Total,1987,849
+North Korea,Total,1988,854
+North Korea,Total,1989,596
+North Korea,Total,1990,296
+North Korea,Total,1991,198
+North Korea,Total,1992,137
+North Korea,Total,1993,93
+North Korea,Total,1994,35
+North Korea,Total,1995,144
+North Korea,Total,1996,78
+North Korea,Total,1997,9
+North Korea,Total,1998,9
+North Korea,Total,1999,179
+North Korea,Total,2000,18
+North Korea,Total,2001,28
+North Korea,Total,2002,9
+North Korea,Total,2003,8
+North Korea,Total,2004,8
+North Korea,Total,2005,5
+North Korea,Total,2006,15
+North Korea,Total,2007,5
+North Korea,Total,2008,5
+North Korea,Total,2009,4
+North Korea,Total,2010,1
+North Korea,Total,2011,0
+North Korea,Total,2012,0
+North Korea,Total,2013,0
+North Korea,Total,2014,0
+North Korea,Total,2015,0
+Myanmar,EU,1980,18
+Myanmar,EU,1981,0
+Myanmar,EU,1982,36
+Myanmar,EU,1983,0
+Myanmar,EU,1984,0
+Myanmar,EU,1985,0
+Myanmar,EU,1986,0
+Myanmar,EU,1987,0
+Myanmar,EU,1988,0
+Myanmar,EU,1989,0
+Myanmar,EU,1990,0
+Myanmar,EU,1991,2
+Myanmar,EU,1992,2
+Myanmar,EU,1993,0
+Myanmar,EU,1994,3
+Myanmar,EU,1995,0
+Myanmar,EU,1996,0
+Myanmar,EU,1997,0
+Myanmar,EU,1998,0
+Myanmar,EU,1999,0
+Myanmar,EU,2000,0
+Myanmar,EU,2001,0
+Myanmar,EU,2002,0
+Myanmar,EU,2003,0
+Myanmar,EU,2004,0
+Myanmar,EU,2005,0
+Myanmar,EU,2006,0
+Myanmar,EU,2007,0
+Myanmar,EU,2008,0
+Myanmar,EU,2009,0
+Myanmar,EU,2010,0
+Myanmar,EU,2011,0
+Myanmar,EU,2012,0
+Myanmar,EU,2013,0
+Myanmar,EU,2014,0
+Myanmar,EU,2015,8
+Myanmar,Others,1980,23
+Myanmar,Others,1981,0
+Myanmar,Others,1982,3
+Myanmar,Others,1983,0
+Myanmar,Others,1984,0
+Myanmar,Others,1985,0
+Myanmar,Others,1986,8
+Myanmar,Others,1987,0
+Myanmar,Others,1988,0
+Myanmar,Others,1989,0
+Myanmar,Others,1990,49
+Myanmar,Others,1991,47
+Myanmar,Others,1992,48
+Myanmar,Others,1993,0
+Myanmar,Others,1994,0
+Myanmar,Others,1995,0
+Myanmar,Others,1996,0
+Myanmar,Others,1997,0
+Myanmar,Others,1998,0
+Myanmar,Others,1999,25
+Myanmar,Others,2000,14
+Myanmar,Others,2001,12
+Myanmar,Others,2002,15
+Myanmar,Others,2003,25
+Myanmar,Others,2004,0
+Myanmar,Others,2005,0
+Myanmar,Others,2006,14
+Myanmar,Others,2007,9
+Myanmar,Others,2008,69
+Myanmar,Others,2009,21
+Myanmar,Others,2010,20
+Myanmar,Others,2011,9
+Myanmar,Others,2012,0
+Myanmar,Others,2013,0
+Myanmar,Others,2014,0
+Myanmar,Others,2015,19
+Myanmar,Russia,1980,0
+Myanmar,Russia,1981,0
+Myanmar,Russia,1982,0
+Myanmar,Russia,1983,0
+Myanmar,Russia,1984,0
+Myanmar,Russia,1985,0
+Myanmar,Russia,1986,0
+Myanmar,Russia,1987,0
+Myanmar,Russia,1988,0
+Myanmar,Russia,1989,0
+Myanmar,Russia,1990,0
+Myanmar,Russia,1991,0
+Myanmar,Russia,1992,0
+Myanmar,Russia,1993,0
+Myanmar,Russia,1994,0
+Myanmar,Russia,1995,47
+Myanmar,Russia,1996,0
+Myanmar,Russia,1997,34
+Myanmar,Russia,1998,0
+Myanmar,Russia,1999,0
+Myanmar,Russia,2000,0
+Myanmar,Russia,2001,87
+Myanmar,Russia,2002,134
+Myanmar,Russia,2003,0
+Myanmar,Russia,2004,120
+Myanmar,Russia,2005,137
+Myanmar,Russia,2006,151
+Myanmar,Russia,2007,127
+Myanmar,Russia,2008,14
+Myanmar,Russia,2009,14
+Myanmar,Russia,2010,38
+Myanmar,Russia,2011,377
+Myanmar,Russia,2012,149
+Myanmar,Russia,2013,60
+Myanmar,Russia,2014,34
+Myanmar,Russia,2015,6
+Myanmar,China,1980,0
+Myanmar,China,1981,0
+Myanmar,China,1982,0
+Myanmar,China,1983,0
+Myanmar,China,1984,0
+Myanmar,China,1985,0
+Myanmar,China,1986,0
+Myanmar,China,1987,0
+Myanmar,China,1988,0
+Myanmar,China,1989,34
+Myanmar,China,1990,217
+Myanmar,China,1991,182
+Myanmar,China,1992,14
+Myanmar,China,1993,323
+Myanmar,China,1994,93
+Myanmar,China,1995,176
+Myanmar,China,1996,118
+Myanmar,China,1997,197
+Myanmar,China,1998,156
+Myanmar,China,1999,116
+Myanmar,China,2000,3
+Myanmar,China,2001,50
+Myanmar,China,2002,9
+Myanmar,China,2003,57
+Myanmar,China,2004,74
+Myanmar,China,2005,23
+Myanmar,China,2006,10
+Myanmar,China,2007,2
+Myanmar,China,2008,10
+Myanmar,China,2009,17
+Myanmar,China,2010,5
+Myanmar,China,2011,277
+Myanmar,China,2012,329
+Myanmar,China,2013,178
+Myanmar,China,2014,267
+Myanmar,China,2015,288
+Myanmar,Total,1980,41
+Myanmar,Total,1981,0
+Myanmar,Total,1982,39
+Myanmar,Total,1983,0
+Myanmar,Total,1984,0
+Myanmar,Total,1985,0
+Myanmar,Total,1986,8
+Myanmar,Total,1987,0
+Myanmar,Total,1988,0
+Myanmar,Total,1989,34
+Myanmar,Total,1990,266
+Myanmar,Total,1991,231
+Myanmar,Total,1992,64
+Myanmar,Total,1993,323
+Myanmar,Total,1994,96
+Myanmar,Total,1995,223
+Myanmar,Total,1996,118
+Myanmar,Total,1997,231
+Myanmar,Total,1998,156
+Myanmar,Total,1999,141
+Myanmar,Total,2000,17
+Myanmar,Total,2001,149
+Myanmar,Total,2002,158
+Myanmar,Total,2003,82
+Myanmar,Total,2004,194
+Myanmar,Total,2005,160
+Myanmar,Total,2006,175
+Myanmar,Total,2007,138
+Myanmar,Total,2008,93
+Myanmar,Total,2009,52
+Myanmar,Total,2010,63
+Myanmar,Total,2011,663
+Myanmar,Total,2012,478
+Myanmar,Total,2013,238
+Myanmar,Total,2014,301
+Myanmar,Total,2015,321
+Syria,EU,1980,10
+Syria,EU,1981,10
+Syria,EU,1982,0
+Syria,EU,1983,0
+Syria,EU,1984,0
+Syria,EU,1985,0
+Syria,EU,1986,0
+Syria,EU,1987,0
+Syria,EU,1988,0
+Syria,EU,1989,0
+Syria,EU,1990,0
+Syria,EU,1991,0
+Syria,EU,1992,0
+Syria,EU,1993,0
+Syria,EU,1994,0
+Syria,EU,1995,0
+Syria,EU,1996,0
+Syria,EU,1997,0
+Syria,EU,1998,0
+Syria,EU,1999,0
+Syria,EU,2000,0
+Syria,EU,2001,0
+Syria,EU,2002,0
+Syria,EU,2003,0
+Syria,EU,2004,0
+Syria,EU,2005,0
+Syria,EU,2006,0
+Syria,EU,2007,0
+Syria,EU,2008,0
+Syria,EU,2009,0
+Syria,EU,2010,0
+Syria,EU,2011,0
+Syria,EU,2012,0
+Syria,EU,2013,0
+Syria,EU,2014,0
+Syria,EU,2015,0
+Syria,Others,1980,1946
+Syria,Others,1981,1338
+Syria,Others,1982,1951
+Syria,Others,1983,2277
+Syria,Others,1984,1838
+Syria,Others,1985,1600
+Syria,Others,1986,1023
+Syria,Others,1987,1357
+Syria,Others,1988,1260
+Syria,Others,1989,628
+Syria,Others,1990,739
+Syria,Others,1991,322
+Syria,Others,1992,231
+Syria,Others,1993,164
+Syria,Others,1994,19
+Syria,Others,1995,35
+Syria,Others,1996,35
+Syria,Others,1997,35
+Syria,Others,1998,35
+Syria,Others,1999,35
+Syria,Others,2000,55
+Syria,Others,2001,20
+Syria,Others,2002,20
+Syria,Others,2003,44
+Syria,Others,2004,20
+Syria,Others,2005,20
+Syria,Others,2006,74
+Syria,Others,2007,20
+Syria,Others,2008,232
+Syria,Others,2009,65
+Syria,Others,2010,45
+Syria,Others,2011,86
+Syria,Others,2012,20
+Syria,Others,2013,10
+Syria,Others,2014,10
+Syria,Others,2015,0
+Syria,Russia,1980,0
+Syria,Russia,1981,0
+Syria,Russia,1982,0
+Syria,Russia,1983,0
+Syria,Russia,1984,0
+Syria,Russia,1985,0
+Syria,Russia,1986,0
+Syria,Russia,1987,0
+Syria,Russia,1988,0
+Syria,Russia,1989,0
+Syria,Russia,1990,0
+Syria,Russia,1991,0
+Syria,Russia,1992,14
+Syria,Russia,1993,10
+Syria,Russia,1994,0
+Syria,Russia,1995,0
+Syria,Russia,1996,0
+Syria,Russia,1997,0
+Syria,Russia,1998,20
+Syria,Russia,1999,23
+Syria,Russia,2000,9
+Syria,Russia,2001,8
+Syria,Russia,2002,25
+Syria,Russia,2003,25
+Syria,Russia,2004,5
+Syria,Russia,2005,15
+Syria,Russia,2006,26
+Syria,Russia,2007,0
+Syria,Russia,2008,44
+Syria,Russia,2009,72
+Syria,Russia,2010,238
+Syria,Russia,2011,282
+Syria,Russia,2012,351
+Syria,Russia,2013,351
+Syria,Russia,2014,0
+Syria,Russia,2015,0
+Syria,China,1980,0
+Syria,China,1981,0
+Syria,China,1982,1
+Syria,China,1983,1
+Syria,China,1984,1
+Syria,China,1985,1
+Syria,China,1986,0
+Syria,China,1987,0
+Syria,China,1988,0
+Syria,China,1989,0
+Syria,China,1990,0
+Syria,China,1991,0
+Syria,China,1992,0
+Syria,China,1993,0
+Syria,China,1994,0
+Syria,China,1995,0
+Syria,China,1996,0
+Syria,China,1997,0
+Syria,China,1998,0
+Syria,China,1999,0
+Syria,China,2000,0
+Syria,China,2001,0
+Syria,China,2002,0
+Syria,China,2003,0
+Syria,China,2004,0
+Syria,China,2005,0
+Syria,China,2006,0
+Syria,China,2007,0
+Syria,China,2008,0
+Syria,China,2009,56
+Syria,China,2010,15
+Syria,China,2011,0
+Syria,China,2012,0
+Syria,China,2013,0
+Syria,China,2014,5
+Syria,China,2015,0
+Syria,Total,1980,1956
+Syria,Total,1981,1348
+Syria,Total,1982,1952
+Syria,Total,1983,2278
+Syria,Total,1984,1839
+Syria,Total,1985,1601
+Syria,Total,1986,1023
+Syria,Total,1987,1357
+Syria,Total,1988,1260
+Syria,Total,1989,628
+Syria,Total,1990,739
+Syria,Total,1991,322
+Syria,Total,1992,245
+Syria,Total,1993,174
+Syria,Total,1994,19
+Syria,Total,1995,35
+Syria,Total,1996,35
+Syria,Total,1997,35
+Syria,Total,1998,55
+Syria,Total,1999,58
+Syria,Total,2000,64
+Syria,Total,2001,28
+Syria,Total,2002,45
+Syria,Total,2003,69
+Syria,Total,2004,25
+Syria,Total,2005,35
+Syria,Total,2006,100
+Syria,Total,2007,20
+Syria,Total,2008,276
+Syria,Total,2009,193
+Syria,Total,2010,298
+Syria,Total,2011,368
+Syria,Total,2012,371
+Syria,Total,2013,361
+Syria,Total,2014,15
+Syria,Total,2015,0

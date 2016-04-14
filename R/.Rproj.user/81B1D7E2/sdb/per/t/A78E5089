@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1456356930525.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "A78E5089",
+    "lastKnownWriteTime" : 0,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "jxr91469il",
+        "caption" : "chinaTotal",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=chinaTotal&cache_key=jxr91469il",
+        "displayedObservations" : 35,
+        "environment" : "",
+        "object" : "chinaTotal",
+        "totalObservations" : 35,
+        "variables" : 4
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}
