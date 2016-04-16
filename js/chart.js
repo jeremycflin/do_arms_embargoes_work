@@ -21,7 +21,7 @@ var scrollVis = function() {
   // and margins of the vis area.
   var width = 820;
   var height = 520;
-  var margin = {top:80, left:70, bottom:40, right:15};
+  var margin = {top:80, left:70, bottom:40, right:55};
 
 
   // Keep track of which visualization
@@ -138,6 +138,7 @@ var scrollVis = function() {
   var countryList = ["China", "Myanmar","Syria","North Korea","Iran"]
 
 
+
   /**
    * chart
    *
@@ -154,11 +155,109 @@ var scrollVis = function() {
       svg.attr("width", width + margin.left + margin.right);
       svg.attr("height", height + margin.top + margin.bottom);
 
+      // svg.attr("width","100%")
+      // .attr("height","100%")
+      // .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
+      // .attr("preserveAspectRatio", "xMinYMax")
+
 
       // this group element will be used to contain all
       // other elements.
       g = svg.select("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    
+
+
+
+      
+        
+      g.append("circle")
+        .attr("r",5)
+        .attr("cx",width + 30)
+        .attr("cy",130) 
+        .attr("class","locator")
+        .attr("id","one")
+
+      g.append("circle")
+        .attr("r",5)
+        .attr("cx",width + 30)
+        .attr("cy",150)
+        .attr("class","locator")
+        .attr("id","two")   
+
+      g.append("circle")
+        .attr("r",5)
+        .attr("cx",width + 30)
+        .attr("cy",170)  
+        .attr("class","locator")
+        .attr("id","three")   
+
+      g.append("circle")
+        .attr("r",5)
+        .attr("cx",width + 30)
+        .attr("cy",190)  
+        .attr("class","locator")
+        .attr("id","four") 
+
+      g.append("circle")
+        .attr("r",5)
+        .attr("cx",width + 30)
+        .attr("cy",210)  
+        .attr("class","locator")
+        .attr("id","five") 
+
+      g.append("circle")
+        .attr("r",5)
+        .attr("cx",width + 30)
+        .attr("cy",230)  
+        .attr("class","locator")
+        .attr("id","six") 
+
+      g.append("circle")
+        .attr("r",5)
+        .attr("cx",width + 30)
+        .attr("cy",250)  
+        .attr("class","locator")
+        .attr("id","seven") 
+
+      g.append("circle")
+        .attr("r",5)
+        .attr("cx",width + 30)
+        .attr("cy",270)  
+        .attr("class","locator")
+        .attr("id","eight") 
+
+      g.append("circle")
+        .attr("r",5)
+        .attr("cx",width + 30)
+        .attr("cy",290)  
+        .attr("class","locator")
+        .attr("id","nine") 
+
+       g.append("circle")
+        .attr("r",5)
+        .attr("cx",width + 30)
+        .attr("cy",310)  
+        .attr("class","locator")
+        .attr("id","ten") 
+
+       g.append("circle")
+        .attr("r",5)
+        .attr("cx",width + 30)
+        .attr("cy",330)  
+        .attr("class","locator")
+        .attr("id","eleven") 
+
+       g.append("circle")
+        .attr("r",5)
+        .attr("cx",width + 30)
+        .attr("cy",350)  
+        .attr("class","locator")
+        .attr("id","twelve") 
+
+
+
 
 
       var lineData = getData(rawData),
@@ -220,6 +319,10 @@ var scrollVis = function() {
    * @param histData - binned histogram data
    */
   setupVis = function(lineData,ChinaBarData, chinaData, myanmarnaData, syriaData, koreaData) {
+
+
+
+
       // Define simple arrowhead marker
     svg.append('defs')
       .append("marker")
@@ -269,6 +372,8 @@ var scrollVis = function() {
         }
       )))
 
+
+      
 
     stack
       .offset("zero")
@@ -947,6 +1052,8 @@ var scrollVis = function() {
   setupSections = function() {
     // activateFunctions are called each
     // time the active section changes
+
+    // console.log(i)
     activateFunctions[0] = showTitle;
     activateFunctions[1] = showAllLine;
     activateFunctions[2] = showChina;
@@ -970,6 +1077,7 @@ var scrollVis = function() {
     // no-op functions.
     for(var i = 0; i < 13; i++) {
       updateFunctions[i] = function() {};
+
     }
     // updateFunctions[7] = updateCough;
   };
@@ -998,6 +1106,14 @@ var scrollVis = function() {
    *
    */
   function showTitle() {
+
+     g.selectAll(".locator")
+      .transition()
+      .duration(500)
+      .style("fill","none")
+      .style("opacity",0)
+
+
     g.selectAll(".count-title")
       .transition()
       .duration(0)
@@ -1073,11 +1189,27 @@ var scrollVis = function() {
       .duration(1000)
       .style("opacity",0)
 
-     g.select("#chinaLine")
+    g.select("#chinaLine")
       .transition()
       .duration(20000)
       .ease("linear")
       .style("stroke-dashoffset", 0);
+
+    g.selectAll(".locator")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("opacity",1)
+      .style("fill", "none");
+
+    g.select("#one")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("opacity",1)
+      .style("fill", "black");
+
+
 
     // cleanChinaLine()
      // svg.selectAll(".chinaannotation")
@@ -1187,7 +1319,20 @@ var scrollVis = function() {
 
   function showChina(){
 
-    
+    g.selectAll(".locator")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill", "none")
+      .style("opacity",1);
+
+    g.select("#two")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill", "black");
+
+
 
     unhighlightChina()
 
@@ -1226,6 +1371,20 @@ var scrollVis = function() {
   }
 
   function highlightChina(){
+
+    g.selectAll(".locator")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill", "none")
+      .style("opacity",1);
+
+    g.select("#three")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill", "black");
+
     g.select(".myanmarLine")
       .transition()
       .duration(900)
@@ -1276,6 +1435,10 @@ var scrollVis = function() {
   }
 
   function unhighlightChina(){
+
+
+
+
     g.selectAll(".chinalayers")
       .transition()
       .style("fill", 
@@ -1313,6 +1476,19 @@ var scrollVis = function() {
   }
 
   function showMyanmarLine(){
+
+    g.selectAll(".locator")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill","none")
+      .style("opacity",1);
+
+    g.select("#four")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill","black")
 
     g.select(".myanmarY")
       .transition()
@@ -1387,6 +1563,19 @@ var scrollVis = function() {
 
   function showMyanmar(){
 
+    g.selectAll(".locator")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill","none")
+      .style("opacity",1)
+
+    g.select("#five")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill","black")
+
     g.selectAll(".layersyanmar")
       .transition()
       .duration(800)
@@ -1433,6 +1622,19 @@ var scrollVis = function() {
 
   function highlightMyanmar(){
 
+    g.selectAll(".locator")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill","none")
+      .style("opacity",1)
+
+    g.select("#six")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill","black")
+
     g.select(".syriaLine")
       .transition()
       .duration(700)
@@ -1471,6 +1673,19 @@ var scrollVis = function() {
   }
 
   function showSyriaLine(){
+
+    g.selectAll(".locator")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill","none")
+      .style("opacity",1)
+
+    g.select("#seven")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill","black")
 
     g.select(".myanmarY")
       .transition()
@@ -1560,6 +1775,20 @@ var scrollVis = function() {
   }
 
   function showSyriaLyaer(){
+
+    g.selectAll(".locator")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill","none")
+      .style("opacity",1)
+
+    g.select("#eight")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill","black")
+
     g.selectAll(".layersyria")
       .transition()
       .duration(500)
@@ -1615,6 +1844,19 @@ var scrollVis = function() {
   }
   //hide syria layer
   function showKoreaLine(){
+
+    g.selectAll(".locator")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill","none")
+      .style("opacity",1)
+
+    g.select("#nine")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill","black")
 
     g.select(".syriaY")
       .transition()
@@ -1694,6 +1936,19 @@ var scrollVis = function() {
 
   function showKoreaLayer(){
 
+    g.selectAll(".locator")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill","none")
+      .style("opacity",1)
+
+    g.select("#ten")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill","black")
+
     g.selectAll(".titleCountry")
       .transition()
       .duration(500)
@@ -1739,6 +1994,19 @@ var scrollVis = function() {
   }
 
   function showIranLine(){
+
+    g.selectAll(".locator")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill","none")
+      .style("opacity",1)
+
+    g.select("#eleven")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill","black")
 
     g.select(".iranY")
       .transition()
@@ -1802,6 +2070,21 @@ var scrollVis = function() {
   }
 
   function showIranLayer(){
+
+    g.selectAll(".locator")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill","none")
+      .style("opacity",1)
+
+    g.select("#twelve")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill","black")
+
+
     g.select(".embargoIran")
       .transition()
       .duration(700)
@@ -1905,6 +2188,7 @@ var scrollVis = function() {
     var scrolledSections = d3.range(lastIndex + sign, activeIndex + sign, sign);
     scrolledSections.forEach(function(i) {
       activateFunctions[i]();
+
     });
     lastIndex = activeIndex;
   };

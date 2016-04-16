@@ -5,16 +5,25 @@
   font-size: 1.5em;
   margin-left: 190%;
 }
-.container {
-  width: 1200px;
-}
+/*.container {
+  width:100%;
+}*/
 
 #graphic {
   padding-top: 60px;
+  /*width:100%;*/
 }
 
-svg{
- /* outline: 1px solid black;*/
+/*svg{
+  outline: 1px solid black;
+}*/
+
+.locator{
+  fill:none;
+  stroke:#7e7e7e;
+  stroke-width:1px;
+  opacity:0;
+
 }
 
 #sections {
@@ -25,6 +34,7 @@ svg{
   /*z-index: 90;*/
   padding-bottom: 200px;
   margin-right: 100px;
+  margin-left: 50px;
 }
 
 .step {
