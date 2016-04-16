@@ -54,7 +54,7 @@ var scrollVis = function() {
     syria:[[710,500],[755,540]],
     syriaAnno:[[110,550],[110,580]],
     korea:[[610,490],[670,570]],
-    koreaAnno:[[275,120],[240,150]]
+    koreaAnno:[[295,215],[270,250]]
   }
 
   var colorScale = {
@@ -397,19 +397,14 @@ var scrollVis = function() {
     xAreaScale.domain(d3.extent(data, function(d) { return d.year; }));
     yAreaScale.domain([0, d3.max(data, function(d) { return d.y0 + d.y; })]);
 
-    var barWidth = x(new Date("2015")) - x(new Date("1989"));
-
     g.append("rect")
       .attr("x", xAreaScale(new Date("1989")))
       .attr("y", 0)
-      .attr("width", barWidth)
-      .attr("height", 0)
+      .attr("width", 0)
+      .attr("height", height)
       .attr("class", "embargoChina")
       .style("opacity", 0.25)
       .style("fill",grey)
-
-    // g.select(".embargoChina")
-    //   .transition.duration(500).attr(width,barWidth)
 
     g.selectAll(".chinalayers")
       .data(layersChina)
@@ -424,42 +419,15 @@ var scrollVis = function() {
       .style("opacity",0)
       .attr("d", function(d) {return area(d.values); })
 
-    // g.append("g")
-    //     .attr("class", "y axis grid chinaY")
-    //     // .domain([0,1200])
-    //     .style('opacity',0)
-    //     .call(yAxisLine)
-
-
-        // .append("text")
-        // .attr("class", "axis_lable")
-        // .attr("transform", "rotate(-90)")
-        // .attr("y", 6)
-        // .attr("dy", ".71em")
-        // .style("text-anchor", "center")
-        //  .attr("y", 0 - margin.left)
-        // .attr("x",0 - (height / 2))
-        // .attr("dy", "1em")
-        // .style("font-size",15)
-        // .text("Million dollar worth of arms")
-
-    // g.append("text")
-    //   .attr("x", xAreaScale(myanmarnaData[0].year) + 10)
-    //   .attr("y", 17)
-    //   .attr("width", width)
-    //   .attr("height", height)
-    //   .text("Million dollar")
-    //   .attr("class", "axis_lable")
-      // .style("font-size",15)
 
      g.append("text")
       .attr("x", xAreaScale(myanmarnaData[0].year) + 10)
       .attr("y", 12)
       .attr("width", width)
       .attr("height", height)
-      .text("Worth of arms to")
+      .text("Million dollar Worth of arms to")
       .attr("class", "axis_lable")
-      // .style("fill","grey")
+      .style("font-size",13)
 
 
      g.append("text")
@@ -478,14 +446,12 @@ var scrollVis = function() {
 
         xAreaScale.domain(d3.extent(data, function(d) { return d.year; }));
         yAreaScale.domain([0, d3.max(data, function(d) { return d.y0 + d.y; })]);
-       
-        var barWidth = x(new Date("2015")) - x(new Date("1991"));
 
         g.append("rect")
           .attr("x", xAreaScale(new Date("1991")))
           .attr("y", 0)
-          .attr("width", barWidth)
-          .attr("height", 0)
+          .attr("width", 0)
+          .attr("height", height)
           .attr("class", "embargoMyanmar")
           .style("opacity", 0.25)
           .style("fill",grey)
@@ -504,11 +470,6 @@ var scrollVis = function() {
         })
           .attr("d", function(d) {return area(d.values); })
 
-// console.log(yAreaScale.domain)
-
-         
-
-
       function drawMyanmarLine(){
         xLineScale.domain(d3.extent(data, function(d) { return d.year; }));
         yLineScale.domain([0, d3.max(data, function(d) { return d.y0 + d.y; })]);
@@ -521,16 +482,6 @@ var scrollVis = function() {
             }
           )))
 
-
-
-        // g.append("text")
-        //   .attr("x", xLineScale(myanmarnaData[2].year) )
-        //   .attr("y", yLineScale(myanmarnaData[11].value + 130))
-        //   .attr("width", width)
-        //   .attr("height", height)
-        //   .text("EU embargo starts")
-        //   .attr("class","annotation myanmarannotation")
-        //   .style("opacity",0);
 
         g.append("text")
           .attr("x", xLineScale(myanmarnaData[1].year) )
@@ -599,13 +550,11 @@ var scrollVis = function() {
       xAreaScale.domain(d3.extent(data, function(d) { return d.year; }));
       yAreaScale.domain([0, d3.max(data, function(d) { return d.y0 + d.y; })]);
 
-      var barWidth = x(new Date("2015")) - x(new Date("2011"));
-
       g.append("rect")
         .attr("x", xAreaScale(new Date("2011")))
         .attr("y", 0)
-        .attr("width", barWidth)
-        .attr("height", 0)
+        .attr("width", 0)
+        .attr("height", height)
         .attr("class", "embargoSyria")
         .style("opacity", 0.25)
         .style("fill",grey)
@@ -708,17 +657,14 @@ var scrollVis = function() {
       xAreaScale.domain(d3.extent(data, function(d) { return d.year; }));
       yAreaScale.domain([0, d3.max(data, function(d) { return d.y0 + d.y; })]);
 
-      var barWidth = x(new Date("2015")) - x(new Date("2006"));
-
       g.append("rect")
         .attr("x", xAreaScale(new Date("2006")))
         .attr("y", 0)
-        .attr("width", barWidth)
-        .attr("height", 0)
+        .attr("width", 0)
+        .attr("height", height)
         .attr("class", "embargoKorea")
         .style("opacity", 0.25)
         .style("fill",grey)
-       
      
       g.selectAll(".layersKorea")
         .data(layersKorea)
@@ -753,34 +699,6 @@ var scrollVis = function() {
           )))
 
 
-
-        // g.append("path")
-        // .attr("x1", function(){
-        //   return xLineScale(2012)
-        // })
-        // .attr("y1",function(){
-        //   return yLineScale(68)
-        // })
-        // .attr("x2", function(){
-        //   return xLineScale(2012)
-        // })
-        // .attr("y2",function(){
-        //   return yLineScale(63)
-        // })
-        // .attr("stroke-width", 150)
-        // .attr("stroke", "black")
-        // .style("opacity",1)
-        // .attr("id","linestuff")
-
-         // g.append("text")
-         //  .attr("x", xLineScale(koreaData[18].year) )
-         //  .attr("y", yLineScale(250))
-         //  .attr("width", width)
-         //  .attr("height", height)
-         //  .text("EU embargo starts")
-         //  .attr("class","koreaannotation annotation koreacountry")
-         //  .style("opacity",0);
-
         g.append("text")
           .attr("x", xLineScale(koreaData[4].year) + 10 )
           .attr("y", yLineScale(250))
@@ -800,8 +718,8 @@ var scrollVis = function() {
           .style("opacity",0)
 
         g.append("text")
-          .attr("x", xLineScale(koreaData[8].year) )
-          .attr("y", yLineScale(1050))
+          .attr("x", xLineScale(koreaData[9].year) )
+          .attr("y", yLineScale(830))
           .attr("width", width)
           .attr("height", height)
           .text(highlightNames.myanmar[0])
@@ -834,13 +752,12 @@ var scrollVis = function() {
       xAreaScale.domain(d3.extent(data, function(d) { return d.year; }));
       yAreaScale.domain([0, d3.max(data, function(d) { return d.y0 + d.y; })]);
 
-      var barWidth = x(new Date("2015")) - x(new Date("2007"));
 
       g.append("rect")
         .attr("x", xAreaScale(new Date("2007")))
         .attr("y", 0)
-        .attr("width", barWidth)
-        .attr("height", 0)
+        .attr("width", 0)
+        .attr("height", height)
         .attr("class", "embargoIran")
         .style("opacity", 0.25)
         .style("fill",grey)
@@ -1222,11 +1139,13 @@ var scrollVis = function() {
       .transition()
       // .duration(500)
       .style("opacity",0)
+
+   
     
     g.select(".embargoChina")
       .transition()
       .duration(700)
-      .attr("height",0)
+      .attr("width",0)
 
     // updateYaxis();
     hideChina();
@@ -1305,7 +1224,7 @@ var scrollVis = function() {
     g.select(".embargoChina")
       .transition()
       .duration(700)
-      .attr("height",0)
+      .attr("width",0)
 
     // updateYaxis();
     hideChina();
@@ -1356,10 +1275,12 @@ var scrollVis = function() {
       .duration(500)
       .style("opacity",0)
 
-    g.select(".embargoChina")
+    var barWidth = xAreaScale(new Date("2015")) - xAreaScale(new Date("1989"));
+
+     g.select(".embargoChina")
       .transition()
       .duration(700)
-      .attr("height",height)
+      .attr("width",barWidth)
   }
 
   function hideChina(){
@@ -1549,12 +1470,12 @@ var scrollVis = function() {
     g.select(".embargoMyanmar")
       .transition()
       .duration(700)
-      .attr("height",0)
+      .attr("width",0)
 
     g.select(".embargoChina")
       .transition()
       .duration(700)
-      .attr("height",0)
+      .attr("width",0)
 
     hideChina();
     hideMyanmar();
@@ -1594,11 +1515,12 @@ var scrollVis = function() {
         else {return 1}          
       })
 
+    var barWidth = xAreaScale(new Date("2015")) - xAreaScale(new Date("1991"));
 
     g.select(".embargoMyanmar")
       .transition()
       .duration(700)
-      .attr("height",height)
+      .attr("width",barWidth)
 
      svg.selectAll(".myanmarcountry")
       .transition()
@@ -1741,9 +1663,7 @@ var scrollVis = function() {
     svg.selectAll(".syriacountry")
       .transition()
       .duration(500)
-      .style("opacity",0)
-
-    
+      .style("opacity",0)    
 
     g.selectAll(".layersyria")
       .transition()
@@ -1751,27 +1671,16 @@ var scrollVis = function() {
       .ease("linear")
       .style("opacity",0)
 
-    g.select("#myanmardot")
-      .transition()
-      .duration(1000)
-      .attr("r",0)
-
-     // g.select("#syriadot")
-     //  .transition()
-     //  .duration(1000)
-     //  .ease("linear")
-     //  .attr("r", 6)
-     //  .style("opacity",1)
 
      g.select(".embargoMyanmar")
       .transition()
       .duration(700)
-      .attr("height",0)
+      .attr("width",0)
 
     g.select(".embargoSyria")
       .transition()
       .duration(700)
-      .attr("height",0)
+      .attr("width",0)
   }
 
   function showSyriaLyaer(){
@@ -1827,16 +1736,13 @@ var scrollVis = function() {
       .duration(500)
       .style("opacity",0)
 
-     g.select(".embargoSyria")
+    var barWidth = xAreaScale(new Date("2015")) - xAreaScale(new Date("2011"));
+
+    g.select(".embargoSyria")
       .transition()
       .duration(700)
-      .attr("height",height)
+      .attr("width",barWidth)
 
-    // svg.selectAll(".syriaannotation")
-    //   .transiton()
-    //   .duration(500)
-    //   .ease("linear")
-    //   .style("opacity",1)
     g.select(".koreaY")
       .transition()
       .duration(500)
@@ -1926,12 +1832,12 @@ var scrollVis = function() {
     g.select(".embargoSyria")
       .transition()
       .duration(700)
-      .attr("height",0)
+      .attr("width",0)
 
     g.select(".embargoKorea")
       .transition()
       .duration(700)
-      .attr("height",0)
+      .attr("width",0)
   }
 
   function showKoreaLayer(){
@@ -1960,10 +1866,12 @@ var scrollVis = function() {
       .ease("linear")
       .style("stroke-dashoffset", 15000);
 
+    var barWidth = xAreaScale(new Date("2015")) - xAreaScale(new Date("2006"));
+
     g.select(".embargoKorea")
       .transition()
       .duration(700)
-      .attr("height",height)
+      .attr("width",barWidth)
 
     g.selectAll(".layerkorea")
       .transition()
@@ -2038,12 +1946,12 @@ var scrollVis = function() {
     g.select(".embargoIran")
       .transition()
       .duration(700)
-      .attr("height",0)
+      .attr("width",0)
 
     g.select(".embargoKorea")
       .transition()
       .duration(700)
-      .attr("height",0)
+      .attr("width",0)
 
     g.selectAll(".layerkorea")
       .transition()
@@ -2084,11 +1992,12 @@ var scrollVis = function() {
       .ease("linear")
       .style("fill","black")
 
+    var barWidth = xAreaScale(new Date("2015")) - xAreaScale(new Date("2007"));
 
     g.select(".embargoIran")
       .transition()
       .duration(700)
-      .attr("height",height)
+      .attr("width",barWidth)
 
     g.selectAll(".layersIran")
       .transition()
