@@ -9,6 +9,18 @@
   width:100%;
 }*/
 
+/*.icon{
+  width:100px;
+  height:100px;
+  margin-top: 40px;
+}
+
+#iconBox{
+  margin-top: -600px;
+  margin-bottom: 600px;
+  z-index: -1000;
+}*/
+
 #graphic {
   padding-top: 60px;
   /*width:100%;*/
@@ -107,7 +119,7 @@
   fill: none;
   shape-rendering: crispEdges;
   stroke: black;
-  /*stroke-width: 1;*/
+  stroke-width: 1;
 }
 
 .grid path{
@@ -254,11 +266,18 @@
   stroke-width:1;
 }*/
 
+/*.embargoChina{
+  stroke:black;
+  stroke-width: 3px;
+  stroke-dasharray: 2,2;
+  fill:none;
+}*/
+
 .grid .tick{
   stroke-width:1px;
   stroke-opacity:0.9;
   shape-rendering: crispEdges;
-  /*stroke-dasharray: 2,2;*/
+/*  stroke-dasharray: 2,2;*/
   color:black;
 }
 
