@@ -70,7 +70,7 @@ var scrollVis = function() {
     .x(function(d) { return d[0]; })
     .y(function(d) { return d[1]; });
 
-  var grey = "#d8d8d8";
+  var grey = "url(#lightstripe)";
   
 
 
@@ -115,6 +115,7 @@ var scrollVis = function() {
   yAxisLine = d3.svg.axis()
     .scale(yLineScale)
     .orient("left")
+    .ticks(6);
 
   var yAxisBar = d3.svg.axis()
     .scale(yBarScale)
@@ -344,7 +345,17 @@ var scrollVis = function() {
       .attr("transform", "translate(0," + height + ")")
       .call(xAxisLine)
 
-    g.select(".x.axis").style("opacity", 0);
+    // g.append("g")
+    //   .attr("class", "x axis")
+    //   .attr("transform", "translate(0," + height + ")")
+    //   .call(xAxisLine)
+
+    // g.append("g")
+    //   .attr("class", "grid")
+    //   .attr("transform", "translate(0," + height + ")")
+    //   .call(xAxisLine)
+
+    // g.select(".x.axis").style("opacity", 0);
 
   
     // count openvis title
@@ -404,7 +415,9 @@ var scrollVis = function() {
       .attr("height", height)
       .attr("class", "embargoChina")
       .style("opacity", 0.25)
-      .style("fill",grey)
+      .style("fill", grey)
+
+
 
     g.selectAll(".chinalayers")
       .data(layersChina)
@@ -1089,6 +1102,11 @@ var scrollVis = function() {
 
     // showLine();
 
+     g.select(".embargoChina")
+      .transition()
+      .duration(700)
+      .attr("width",0)
+
     showAxis(xAxisLine, yAxisLine);
 
     g.select(".chinaY")
@@ -1142,10 +1160,7 @@ var scrollVis = function() {
 
    
     
-    g.select(".embargoChina")
-      .transition()
-      .duration(700)
-      .attr("width",0)
+   
 
     // updateYaxis();
     hideChina();
@@ -1215,16 +1230,18 @@ var scrollVis = function() {
     //    .duration(500)
     //    .style("opacity",1)
 
+    g.select(".embargoChina")
+      .transition()
+      .duration(700)
+      .attr("width",0)
+
 
     svg.selectAll(".chinaFrance")
       .transition()
       .duration(500)
       .style("opacity",0)
     
-    g.select(".embargoChina")
-      .transition()
-      .duration(700)
-      .attr("width",0)
+    
 
     // updateYaxis();
     hideChina();
@@ -1237,6 +1254,13 @@ var scrollVis = function() {
 
 
   function showChina(){
+
+     var barWidth = xAreaScale(new Date("2015")) - xAreaScale(new Date("1989"));
+
+     g.select(".embargoChina")
+      .transition()
+      .duration(700)
+      .attr("width",barWidth)
 
     g.selectAll(".locator")
       .transition()
@@ -1275,12 +1299,7 @@ var scrollVis = function() {
       .duration(500)
       .style("opacity",0)
 
-    var barWidth = xAreaScale(new Date("2015")) - xAreaScale(new Date("1989"));
-
-     g.select(".embargoChina")
-      .transition()
-      .duration(700)
-      .attr("width",barWidth)
+   
   }
 
   function hideChina(){
@@ -1398,6 +1417,16 @@ var scrollVis = function() {
 
   function showMyanmarLine(){
 
+     g.select(".embargoMyanmar")
+      .transition()
+      .duration(700)
+      .attr("width",0)
+
+    g.select(".embargoChina")
+      .transition()
+      .duration(700)
+      .attr("width",0)
+
     g.selectAll(".locator")
       .transition()
       .duration(500)
@@ -1467,15 +1496,7 @@ var scrollVis = function() {
       .duration(500)
       .style("opacity",0)
 
-    g.select(".embargoMyanmar")
-      .transition()
-      .duration(700)
-      .attr("width",0)
-
-    g.select(".embargoChina")
-      .transition()
-      .duration(700)
-      .attr("width",0)
+   
 
     hideChina();
     hideMyanmar();
@@ -1483,6 +1504,13 @@ var scrollVis = function() {
   }
 
   function showMyanmar(){
+
+     var barWidth = xAreaScale(new Date("2015")) - xAreaScale(new Date("1991"));
+
+    g.select(".embargoMyanmar")
+      .transition()
+      .duration(700)
+      .attr("width",barWidth)
 
     g.selectAll(".locator")
       .transition()
@@ -1515,12 +1543,7 @@ var scrollVis = function() {
         else {return 1}          
       })
 
-    var barWidth = xAreaScale(new Date("2015")) - xAreaScale(new Date("1991"));
-
-    g.select(".embargoMyanmar")
-      .transition()
-      .duration(700)
-      .attr("width",barWidth)
+   
 
      svg.selectAll(".myanmarcountry")
       .transition()
