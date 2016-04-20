@@ -55,7 +55,8 @@ var scrollVis = function() {
     syria:[[710,500],[755,540]],
     syriaAnno:[[110,550],[110,580]],
     korea:[[610,490],[670,570]],
-    koreaAnno:[[295,215],[270,250]]
+    koreaAnno:[[295,215],[270,250]],
+    coldWarTime:[[295,75],[320,65]]
   }
 
   var colorScale = {
@@ -72,6 +73,8 @@ var scrollVis = function() {
     .y(function(d) { return d[1]; });
 
   var grey = "url(#lightstripe)";
+
+  var coldwar = "url(#smalldot)";
   
 
 
@@ -433,8 +436,8 @@ var scrollVis = function() {
 
 
      g.append("text")
-      .attr("x", xAreaScale(myanmarnaData[0].year) + 10)
-      .attr("y", 12)
+      .attr("x", xAreaScale(myanmarnaData[0].year)- 45)
+      .attr("y", -50)
       .attr("width", width)
       .attr("height", height)
       .text("Million dollar Worth of arms to")
@@ -443,8 +446,8 @@ var scrollVis = function() {
 
 
      g.append("text")
-      .attr("x", xAreaScale(myanmarnaData[0].year) + 8)
-      .attr("y", 50)
+      .attr("x", xAreaScale(myanmarnaData[0].year) - 45)
+      .attr("y", -10)
       .attr("width", width)
       .attr("height", height)
       .text(highlightNames.myanmar[0])
@@ -670,6 +673,8 @@ var scrollVis = function() {
       xAreaScale.domain(d3.extent(data, function(d) { return d.year; }));
       yAreaScale.domain([0, d3.max(data, function(d) { return d.y0 + d.y; })]);
 
+      var barWidth = xAreaScale(new Date("1991")) - xAreaScale(new Date("1980"));
+
       g.append("rect")
         .attr("x", xAreaScale(new Date("2006")))
         .attr("y", 0)
@@ -678,6 +683,16 @@ var scrollVis = function() {
         .attr("class", "embargoKorea")
         .style("opacity", 0.25)
         .style("fill",grey)
+
+      g.append("rect")
+        .attr("x", xAreaScale(new Date("1980")))
+        .attr("y", 0)
+        .attr("width", barWidth)
+        .attr("height", height)
+        .attr("id", "coldWarKorea")
+        .style("opacity", 0)
+        .style("fill",coldwar)
+
      
       g.selectAll(".layersKorea")
         .data(layersKorea)
@@ -746,6 +761,17 @@ var scrollVis = function() {
           .attr("height", height)
           .text("EU embargo starts from 2006")
           .attr("class","koreaannotation annotation koreacountry dropdown")
+          .style("opacity",0)
+          .style("font-weight",400)
+          .style("text-align","center")
+
+        g.append("text")
+          .attr("x", xLineScale(koreaData[11].year))
+          .attr("y", -10)
+          .attr("width", width)
+          .attr("height", height)
+          .text("The Cold War")
+          .attr("class","dropdown koreaColdWar")
           .style("opacity",0)
           .style("font-weight",400)
           .style("text-align","center")
@@ -913,6 +939,14 @@ var scrollVis = function() {
     .datum(arrowPos.koreaAnno)
     .attr("d", swoopy)
     .attr("class","koreaannotation annotation koreacountry koreamarker")
+
+    svg.append("path")
+    .attr('marker-end', 'url(#arrowhead)')
+    .datum(arrowPos.coldWarTime)
+    .attr("d", swoopy)
+    .attr("id","coldwar")
+    .style("opacity",0)
+
 
     // g.append("text")
     //   .attr("x", xLineScale(chinaData[2].year) )
@@ -1567,6 +1601,21 @@ var scrollVis = function() {
 
   function highlightMyanmar(){
 
+    g.select(".koreaColdWar")
+      .transition()
+      .duration(700)
+      .style("opacity",0)
+
+    svg.select("#coldwar")
+      .transition()
+      .duration(700)
+      .style("opacity",0)
+
+    g.select("#coldWarKorea")
+      .transition()
+      .duration(700)
+      .style("opacity",0)
+
     g.selectAll(".locator")
       .transition()
       .duration(500)
@@ -1618,6 +1667,21 @@ var scrollVis = function() {
   }
 
   function showSyriaLine(){
+
+     g.select(".koreaColdWar")
+      .transition()
+      .duration(700)
+      .style("opacity",1)
+
+    svg.select("#coldwar")
+      .transition()
+      .duration(700)
+      .style("opacity",1)
+
+    g.select("#coldWarKorea")
+      .transition()
+      .duration(1200)
+      .style("opacity",1)
 
     g.selectAll(".locator")
       .transition()
@@ -1708,6 +1772,27 @@ var scrollVis = function() {
 
   function showSyriaLyaer(){
 
+    g.select(".koreaColdWar")
+      .transition()
+      .duration(700)
+      .style("opacity",0)
+
+    svg.select("#coldwar")
+      .transition()
+      .duration(700)
+      .style("opacity",0)
+
+    g.select("#coldWarKorea")
+      .transition()
+      .duration(700)
+      .style("opacity",0)
+
+    g.selectAll(".layersyria")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("opacity",1)
+
     g.selectAll(".locator")
       .transition()
       .duration(500)
@@ -1721,11 +1806,7 @@ var scrollVis = function() {
       .ease("linear")
       .style("fill","black")
 
-    g.selectAll(".layersyria")
-      .transition()
-      .duration(500)
-      .ease("linear")
-      .style("opacity",1)
+    
 
     svg.selectAll(".syriacountry")
       .transition()
@@ -1773,6 +1854,22 @@ var scrollVis = function() {
   }
   //hide syria layer
   function showKoreaLine(){
+
+    g.select(".koreaColdWar")
+      .transition()
+      .duration(700)
+      .style("opacity",1)
+
+    svg.select("#coldwar")
+      .transition()
+      .duration(700)
+      .style("opacity",1)
+
+    g.select("#coldWarKorea")
+      .transition()
+      .duration(1200)
+      .style("opacity",1)
+
 
     g.selectAll(".locator")
       .transition()
@@ -1865,6 +1962,21 @@ var scrollVis = function() {
 
   function showKoreaLayer(){
 
+    g.select("#coldWarKorea")
+      .transition()
+      .duration(700)
+      .style("opacity",0)
+
+    svg.select("#coldwar")
+      .transition()
+      .duration(700)
+      .style("opacity",0)
+
+    g.select(".koreaColdWar")
+      .transition()
+      .duration(700)
+      .style("opacity",0)
+
     g.selectAll(".locator")
       .transition()
       .duration(500)
@@ -1925,6 +2037,8 @@ var scrollVis = function() {
   }
 
   function showIranLine(){
+
+    
 
     g.selectAll(".locator")
       .transition()
