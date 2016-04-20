@@ -537,14 +537,15 @@ var scrollVis = function() {
 
         g.append("text")
           .attr("x", xLineScale(myanmarnaData[11].year) )
-          .attr("y", 0)
+          .attr("y", -10)
           .attr("width", width)
           .attr("height", height)
           .text("EU embargo starts from 1991")
-          .attr("class","annotation myanmarcountry")
+          .attr("class","annotation myanmarcountry dropdown")
           .style("opacity",0)
           .style("font-weight",400)
           .style("text-align","center")
+
 
         g.append("g")
           .call(yAxisLine)
@@ -645,11 +646,11 @@ var scrollVis = function() {
 
         g.append("text")
           .attr("x", xLineScale(myanmarnaData[27].year))
-          .attr("y", 0)
+          .attr("y", -10)
           .attr("width", width)
           .attr("height", height)
           .text("EU embargo starts from 2011")
-          .attr("class","syriacountry annotation")
+          .attr("class","syriacountry annotation dropdown")
           .style("opacity",0)
           .style("font-weight",400)
           .style("text-align","center")
@@ -740,11 +741,11 @@ var scrollVis = function() {
 
         g.append("text")
           .attr("x", xLineScale(koreaData[26].year))
-          .attr("y", 0)
+          .attr("y", -10)
           .attr("width", width)
           .attr("height", height)
           .text("EU embargo starts from 2006")
-          .attr("class","koreaannotation annotation koreacountry")
+          .attr("class","koreaannotation annotation koreacountry dropdown")
           .style("opacity",0)
           .style("font-weight",400)
           .style("text-align","center")
@@ -845,11 +846,11 @@ var scrollVis = function() {
 
         g.append("text")
           .attr("x", xLineScale(koreaData[27].year))
-          .attr("y", 0)
+          .attr("y", -10)
           .attr("width", width)
           .attr("height", height)
           .text("EU embargo starts from 2007")
-          .attr("class","annotation iranAnnotation")
+          .attr("class","annotation iranAnnotation dropdown")
           .style("opacity",0)
           .style("font-weight",400)
           .style("text-align","center")
@@ -954,11 +955,11 @@ var scrollVis = function() {
 
     g.append("text")
       .attr("x", xLineScale(chinaData[9].year) )
-      .attr("y", 0)
+      .attr("y", -10)
       .attr("width", width)
       .attr("height", height)
       .text("EU embargo starts from 1989")
-      .attr("class","annotation chinaFrance")
+      .attr("class","annotation chinaFrance dropdown")
       .style("opacity",0)
       .style("font-weight",400)
       .style("text-align","center")
@@ -1340,7 +1341,7 @@ var scrollVis = function() {
       .duration(800)
       // .delay(500)
       .ease("linear")
-      .style("fill-opacity", 
+      .style("opacity", 
           function(d){
             if(d.key == "Russia"){ return 1}
             else {return .8}
