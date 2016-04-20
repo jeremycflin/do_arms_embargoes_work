@@ -1,19 +1,8 @@
 
 jQuery(document).ready(function($){
-    
-    // $("#header-container").width($(window).width()); 
-    
-    // $("#header-container").height($(window).height()); 
-
-    
-    $(window).on("load resize", function(){ 
-        // $("#header-container").height($(window).height());
-        // $("#header-container").width($(window).width()); 
-        var s = skrollr.init();
-    });  
-    
-   
-            
+  $(window).on("load resize", function(){ 
+    var s = skrollr.init();
+  });  
 });
 
 var scrollVis = function() {
@@ -22,8 +11,6 @@ var scrollVis = function() {
   var width = 820;
   var height = 520;
   var margin = {top:80, left:70, bottom:80, right:55};
-  // var margin = {top:0, left:0, bottom:0, right:60};
-
 
   // Keep track of which visualization
   // we are on and which was the last
@@ -40,7 +27,15 @@ var scrollVis = function() {
   // for displaying visualizations
   var g = null;
 
-  var parseDate = d3.time.format("%Y").parse;
+  // When scrolling to a new section
+  // the activation function for that
+  // section is called.
+  var activateFunctions = [];
+  // If a section has an update function
+  // then it is called while scrolling
+  // through the section with the current
+  // progress through the section.
+  var updateFunctions = [];
 
   var highlightNames = 
     { china:["RUSSIA","EU","OTHER"],
@@ -60,7 +55,6 @@ var scrollVis = function() {
   }
 
   var colorScale = {
-    // EU:"#00a8ff",
     EU:"#10a7dd",
     Russia:"#FFC9B2",
     China:"#ff99ad",
@@ -72,40 +66,31 @@ var scrollVis = function() {
     .x(function(d) { return d[0]; })
     .y(function(d) { return d[1]; });
 
-  var grey = "url(#lightstripe)";
+  var embargo = "url(#lightstripe)";
 
   var coldwar = "url(#smalldot)";
+
   
+  //////////////////////////////////////////
+  //////////////////////////////////////////
+  //////////////////////////////////////////
+  //////////////////////////////////////////
+  //////////////////////////////////////////
+  //////////////////////////////////////////
+  //////////////////////////////////////////
+  //////////////////////////////////////////
+  //////////////////////////////////////////
+  var parseDate = d3.time.format("%Y").parse;
 
-
-
-  // When scrolling to a new section
-  // the activation function for that
-  // section is called.
-  var activateFunctions = [];
-  // If a section has an update function
-  // then it is called while scrolling
-  // through the section with the current
-  // progress through the section.
-  var updateFunctions = [];
-  //////////////////////////////////////////
-  //////////////////////////////////////////
-  //////////////////////////////////////////
-  //////////////////////////////////////////
-  //////////////////////////////////////////
-  //////////////////////////////////////////
-  //////////////////////////////////////////
-  //////////////////////////////////////////
-  //////////////////////////////////////////
   var xLineScale = d3.time.scale()
     .range([0, width]),
 
   yLineScale = d3.scale.linear()
     .range([height, 0]);
 
-  var xBarScale = d3.scale.ordinal()
+  var xChinaScale = d3.scale.ordinal()
     .rangeRoundBands([0, width], .005),
-  yBarScale = d3.scale.linear()
+  yChinaScale = d3.scale.linear()
     .rangeRound([height, 0]);
 
   var xAreaScale = d3.time.scale().range([0, width]),
@@ -116,15 +101,10 @@ var scrollVis = function() {
     .orient("bottom")
     .ticks(10),
 
-  yAxisLine = d3.svg.axis()
+  yAxis = d3.svg.axis()
     .scale(yLineScale)
     .orient("left")
     .ticks(6);
-
-  var yAxisBar = d3.svg.axis()
-    .scale(yBarScale)
-    .orient("left")
-    .ticks(10);
 
   //line
   var valueline = d3.svg.line().interpolate("basis")
@@ -132,13 +112,9 @@ var scrollVis = function() {
     .y(function(d) { return yLineScale(d.value); });
 
 
-  var x = d3.time.scale();
-
-  var color = d3.scale.category10(),
-  area  = d3.svg.area().interpolate("basis"),
-  stack = d3.layout.stack(),
-  nest = d3.nest()
-        .key(function(d) { return d.country; });
+  var area  = d3.svg.area().interpolate("basis"),
+    stack = d3.layout.stack(),
+    nest = d3.nest().key(function(d) { return d.country; });
 
   var countryList = ["China", "Myanmar","Syria","North Korea","Iran"]
 
@@ -152,11 +128,12 @@ var scrollVis = function() {
    *  example, we will be drawing it in #vis
    */
   var chart = function(selection) {
+
     selection.each(function(rawData) {
+
       // create svg and give it a width and height
       svg = d3.select(this).selectAll("svg").data([rawData]);
       svg.enter()
-      // .append("div").attr("class","svg-holder")
       .append("svg").append("g")
 
       // svg.attr("width", width + margin.left + margin.right);
@@ -238,7 +215,7 @@ var scrollVis = function() {
         .attr("class","locator")
         .attr("id","nine") 
 
-       g.append("circle")
+      g.append("circle")
         .attr("r",5)
         .attr("cx",width + 30)
         .attr("cy",310)  
@@ -260,12 +237,7 @@ var scrollVis = function() {
         .attr("id","twelve") 
 
 
-
-
-
-      var lineData = getData(rawData),
-        ChinaBarData = dataFilter(lineData,countryList[0]);
-
+      var lineData = getData(rawData);
 
       var chinaData = dataFilter(lineData,countryList[0]);
 
@@ -292,16 +264,16 @@ var scrollVis = function() {
 
 
       //set china bar chart's domain
-      var barChinaXdomain = dataFilter(lineData,countryList[0]).map(function(d) { return d.year; })
-      xBarScale.domain(barChinaXdomain)
+      // var barChinaXdomain = dataFilter(lineData,countryList[0]).map(function(d) { return d.year; })
+      // xChinaScale.domain(barChinaXdomain)
 
-      var barChinaYdomain = d3.max(dataFilter(chinaData,countryList[0]), function(d){return Math.max(d.value);});
-      yBarScale.domain([0, barChinaYdomain])
+      // var barChinaYdomain = d3.max(dataFilter(chinaData,countryList[0]), function(d){return Math.max(d.value);});
+      // yChinaScale.domain([0, barChinaYdomain])
 
       // var myanmarDomain = d3.max(dataFilter(chinaData,countryList[1]), function(d){return Math.max(d.value);});
-      // yBarScale.domain([0, myanmarDomain])
+      // yChinaScale.domain([0, myanmarDomain])
 
-      setupVis(lineData,ChinaBarData, chinaData, myanmarnaData, syriaData, koreaData);
+      setupVis(lineData,chinaData, myanmarnaData, syriaData, koreaData);
 
 
       g.select(".y.axis").style("opacity", 0);
@@ -321,11 +293,7 @@ var scrollVis = function() {
    *  element for each filler word type.
    * @param histData - binned histogram data
    */
-  setupVis = function(lineData,ChinaBarData, chinaData, myanmarnaData, syriaData, koreaData) {
-
-
-
-
+  setupVis = function(lineData,chinaData, myanmarnaData, syriaData, koreaData) {
       // Define simple arrowhead marker
     svg.append('defs')
       .append("marker")
@@ -341,51 +309,18 @@ var scrollVis = function() {
         .attr("stroke-linejoin", "bevel")
         .attr("points", "-6.75,-6.75 0,0 -6.75,6.75");
     
-    
     g.append("g")
       .attr("class", "x axis grid")
       .attr("transform", "translate(0," + height + ")")
       .call(xAxisLine)
 
-    // g.append("g")
-    //   .attr("class", "x axis")
-    //   .attr("transform", "translate(0," + height + ")")
-    //   .call(xAxisLine)
-
-    // g.append("g")
-    //   .attr("class", "grid")
-    //   .attr("transform", "translate(0," + height + ")")
-    //   .call(xAxisLine)
-
-    // g.select(".x.axis").style("opacity", 0);
-
-  
-    // count openvis title
-    // g.append("text")
-    //   .attr("class", "title openvis-title")
-    //   .attr("x", width / 2)
-    //   .attr("y", height / 2.5)
-    //   .text("DO ARMS EMBARGOES");
-
-    // g.append("text")
-    //   .attr("class", "sub-title openvis-title")
-    //   .attr("x", width / 2)
-    //   .attr("y", (height / 3) + (height / 6) )
-    //   .text("ACTUALLY WORK?");
-
-    g.selectAll(".openvis-title")
-      .attr("opacity", 0);
-
     g.append("path")      
-      // .attr("class", "line") 
       .attr("id", "chinaLine") 
       .attr("d", valueline(lineData.filter(
         function(d){
           return d.country == "Total" && d.recipient == "China";
         }
       )))
-
-
       
 
     stack
@@ -417,7 +352,7 @@ var scrollVis = function() {
       .attr("height", height)
       .attr("class", "embargoChina")
       .style("opacity", 0.25)
-      .style("fill", grey)
+      .style("fill", embargo)
 
 
 
@@ -440,7 +375,7 @@ var scrollVis = function() {
       .attr("y", -50)
       .attr("width", width)
       .attr("height", height)
-      .text("Million dollar Worth of arms to")
+      .text("Million dollar worth of arms to")
       .attr("class", "axis_lable")
       .style("font-size",13)
 
@@ -469,7 +404,7 @@ var scrollVis = function() {
           .attr("height", height)
           .attr("class", "embargoMyanmar")
           .style("opacity", 0.25)
-          .style("fill",grey)
+          .style("fill",embargo)
      
         g.selectAll(".layersyanmar")
           .data(layersMyanmar)
@@ -551,7 +486,7 @@ var scrollVis = function() {
 
 
         g.append("g")
-          .call(yAxisLine)
+          .call(yAxis)
           .attr('class','myanmarY axis grid')
           .style('opacity',0)
 
@@ -573,7 +508,7 @@ var scrollVis = function() {
         .attr("height", height)
         .attr("class", "embargoSyria")
         .style("opacity", 0.25)
-        .style("fill",grey)
+        .style("fill",embargo)
        
      
       g.selectAll(".layersSyria")
@@ -659,7 +594,7 @@ var scrollVis = function() {
           .style("text-align","center")
 
         g.append("g")
-          .call(yAxisLine)
+          .call(yAxis)
           .attr('class','syriaY axis grid')
           .style('opacity',0)
 
@@ -682,7 +617,7 @@ var scrollVis = function() {
         .attr("height", height)
         .attr("class", "embargoKorea")
         .style("opacity", 0.25)
-        .style("fill",grey)
+        .style("fill",embargo)
 
       g.append("rect")
         .attr("x", xAreaScale(new Date("1980")))
@@ -700,11 +635,6 @@ var scrollVis = function() {
         .append("path")
         .attr("class", "layers layerkorea")
         .style("opacity",0)
-        // .style("fill",function(d){
-        //   if(d.key=="Russia"){
-        //     return colors["korea"]
-        //   }else{return colors["grey"]}
-        // })
         .style("fill", function(d){
             if(d.key == "EU"){ return colorScale["EU"]}
             else if (d.key == "Russia"){return colorScale["Russia"]}
@@ -777,7 +707,7 @@ var scrollVis = function() {
           .style("text-align","center")
 
         g.append("g")
-          .call(yAxisLine)
+          .call(yAxis)
           .attr('class','koreaY axis grid')
           .style('opacity',0)
 
@@ -799,7 +729,7 @@ var scrollVis = function() {
         .attr("height", height)
         .attr("class", "embargoIran")
         .style("opacity", 0.25)
-        .style("fill",grey)
+        .style("fill",embargo)
          
      
       g.selectAll(".layersIran")
@@ -882,7 +812,7 @@ var scrollVis = function() {
           .style("text-align","center")
 
          g.append("g")
-          .call(yAxisLine)
+          .call(yAxis)
           .attr('class','iranY axis grid')
           .style('opacity',0)
 
@@ -902,60 +832,52 @@ var scrollVis = function() {
 
     // Draw some arrows!
     svg.append("path")
-    .attr('marker-end', 'url(#arrowhead)')
-    .datum(arrowPos.china)
-    .attr("d", swoopy)
-    .attr("class","annotation")
-    .style("opacity",0)
+      .attr('marker-end', 'url(#arrowhead)')
+      .datum(arrowPos.china)
+      .attr("d", swoopy)
+      .attr("class","annotation")
+      .style("opacity",0)
 
     svg.append("path")
-    .attr('marker-end', 'url(#arrowhead)')
-    .datum(arrowPos.myanmar)
-    .attr("d", swoopy)
-    .attr("class","myanmarannotation annotation")
-    .style("opacity",0)
+      .attr('marker-end', 'url(#arrowhead)')
+      .datum(arrowPos.myanmar)
+      .attr("d", swoopy)
+      .attr("class","myanmarannotation annotation")
+      .style("opacity",0)
 
     svg.append("path")
-    .attr('marker-end', 'url(#arrowhead)')
-    .datum(arrowPos.syria)
-    .attr("d", swoopy)
-    .attr("class","syriacountry annotation")
-    // .style("opacity",0)
+      .attr('marker-end', 'url(#arrowhead)')
+      .datum(arrowPos.syria)
+      .attr("d", swoopy)
+      .attr("class","syriacountry annotation")
+      .style("opacity",0)
 
     svg.append("path")
-    .attr('marker-end', 'url(#arrowhead)')
-    .datum(arrowPos.syriaAnno)
-    .attr("class","syriacountry annotation")
-    .attr("d", swoopy)
-    // .style("opacity",0)
+      .attr('marker-end', 'url(#arrowhead)')
+      .datum(arrowPos.syriaAnno)
+      .attr("class","syriacountry annotation")
+      .attr("d", swoopy)
+      .style("opacity",0)
 
     svg.append("path")
-    .attr('marker-end', 'url(#arrowhead)')  
-    .attr("d", swoopy)
-    .attr("class","koreaannotation annotation koreacountry koreamarker")
+      .attr('marker-end', 'url(#arrowhead)')  
+      .attr("d", swoopy)
+      .attr("class","koreaannotation annotation koreacountry koreamarker")
+      .style("opacity",0)
 
     svg.append("path")
-    .attr('marker-end', 'url(#arrowhead)')
-    .datum(arrowPos.koreaAnno)
-    .attr("d", swoopy)
-    .attr("class","koreaannotation annotation koreacountry koreamarker")
+      .attr('marker-end', 'url(#arrowhead)')
+      .datum(arrowPos.koreaAnno)
+      .attr("d", swoopy)
+      .attr("class","koreaannotation annotation koreacountry koreamarker")
+      .style("opacity",0)
 
     svg.append("path")
-    .attr('marker-end', 'url(#arrowhead)')
-    .datum(arrowPos.coldWarTime)
-    .attr("d", swoopy)
-    .attr("id","coldwar")
-    .style("opacity",0)
-
-
-    // g.append("text")
-    //   .attr("x", xLineScale(chinaData[2].year) )
-    //   .attr("y", yLineScale(550))
-    //   .attr("width", width)
-    //   .attr("height", height)
-    //   .text("EU embargo starts")
-    //   .attr("class","annotation")
-    //   .style("opacity",0);
+      .attr('marker-end', 'url(#arrowhead)')
+      .datum(arrowPos.coldWarTime)
+      .attr("d", swoopy)
+      .attr("id","coldwar")
+      .style("opacity",0)
 
     g.append("text")
       .attr("x", xLineScale(chinaData[24].year) - 10 )
@@ -999,7 +921,7 @@ var scrollVis = function() {
       .style("text-align","center")
 
     g.append("g")
-      .call(yAxisLine)
+      .call(yAxis)
       .attr('class','chinaY axis grid')
       .style('opacity',0)
 
@@ -1017,11 +939,9 @@ var scrollVis = function() {
     // activateFunctions are called each
     // time the active section changes
 
-    // console.log(i)
     activateFunctions[0] = showTitle;
     activateFunctions[1] = showAllLine;
     activateFunctions[2] = showChina;
-    // activateFunctions[3] = showChina;
     activateFunctions[3] = highlightChina;
     activateFunctions[4] = showMyanmarLine;
     activateFunctions[5] = showMyanmar;
@@ -1043,7 +963,6 @@ var scrollVis = function() {
       updateFunctions[i] = function() {};
 
     }
-    // updateFunctions[7] = updateCough;
   };
 
   /**
@@ -1071,12 +990,11 @@ var scrollVis = function() {
    */
   function showTitle() {
 
-     g.selectAll(".locator")
+    g.selectAll(".locator")
       .transition()
       .duration(500)
       .style("fill","none")
       .style("opacity",0)
-
 
     g.selectAll(".count-title")
       .transition()
@@ -1088,7 +1006,7 @@ var scrollVis = function() {
       .duration(600)
       .attr("opacity", 1.0);
 
-     g.select("#chinaLine")
+    g.select("#chinaLine")
       .transition()
       .duration(700)
       .ease("linear")
@@ -1096,11 +1014,8 @@ var scrollVis = function() {
 
     svg.selectAll(".annotation")
       .transition()
-      // .duration(250)
-      // .delay(500)
       .ease("linear")
       .style("opacity", 0);
-
 
     svg.selectAll(".axis_lable")
       .transition()
@@ -1112,7 +1027,7 @@ var scrollVis = function() {
       .duration(500)
       .style('opacity',0)
 
-    hideAxis(xAxisLine, yAxisLine);
+    hideAxis(xAxisLine, yAxis);
   }
 
     /**
@@ -1124,24 +1039,13 @@ var scrollVis = function() {
    *
    */
   function showAllLine() {
-    g.selectAll(".openvis-title")
-      .transition()
-      .duration(0)
-      .attr("opacity", 0);
-
-    // g.selectAll(".count-title")
-    //   .transition()
-    //   .duration(600)
-    //   .attr("opacity", 1.0);
-
-    // showLine();
 
      g.select(".embargoChina")
       .transition()
       .duration(700)
       .attr("width",0)
 
-    showAxis(xAxisLine, yAxisLine);
+    showAxis(xAxisLine, yAxis);
 
     g.select(".chinaY")
       .transition()
@@ -1178,25 +1082,11 @@ var scrollVis = function() {
       .style("opacity",1)
       .style("fill", "black");
 
-
-
-    // cleanChinaLine()
-     // svg.selectAll(".chinaannotation")
-     //   .transition()
-     //   .duration(500)
-     //   .style("opacity",1)
-
-
     svg.selectAll(".chinaFrance")
       .transition()
       // .duration(500)
       .style("opacity",0)
 
-   
-    
-   
-
-    // updateYaxis();
     hideChina();
     hideMyanmar();
 
@@ -1218,7 +1108,7 @@ var scrollVis = function() {
       .style("opacity", 1);
 
      g.select(".y.axis")
-      .call(yAxisLine)
+      .call(yAxis)
       .transition().duration(500)
       .style("opacity", 1);
   }
@@ -1238,54 +1128,6 @@ var scrollVis = function() {
       .style("opacity",0);
 
   }
-
-  /**
-   * showLine - helper function to
-   * display particular the line chart
-   *
-   * @param axis - the axis to show
-   *  (xAxisHist or xAxisBar)
-   */
-  function showLine() {
-    g.selectAll(".line")
-      .transition()
-      .duration(1500)
-      .style("opacity", 1.0)
-
-
-  }
-
-  function cleanLine(lineData){
-    // hideAxis(xAxisLine, yAxisLine)
-
-
-    // svg.selectAll(".chinaannotation")
-    //    .transition()
-    //    .duration(500)
-    //    .style("opacity",1)
-
-    g.select(".embargoChina")
-      .transition()
-      .duration(700)
-      .attr("width",0)
-
-
-    svg.selectAll(".chinaFrance")
-      .transition()
-      .duration(500)
-      .style("opacity",0)
-    
-    
-
-    // updateYaxis();
-    hideChina();
-    hideMyanmar();
-
-    
-
-  }
-
-
 
   function showChina(){
 
@@ -1309,8 +1151,6 @@ var scrollVis = function() {
       .ease("linear")
       .style("fill", "black");
 
-
-
     unhighlightChina()
 
     g.selectAll(".chinalayers")
@@ -1332,8 +1172,6 @@ var scrollVis = function() {
       .transition()
       .duration(500)
       .style("opacity",0)
-
-   
   }
 
   function hideChina(){
@@ -1410,33 +1248,18 @@ var scrollVis = function() {
 
   function unhighlightChina(){
 
-
-
-
     g.selectAll(".chinalayers")
       .transition()
       .style("fill", 
-            function(d){
-              if(d.key == "EU"){ return colorScale["EU"]}
-              // else if
-              //   (d.key == "Italy"){ return "#d8a7ba"}
-              // else if
-              //   (d.key == "United Kingdom"){ return "#d8a7ba"}
-              // else if
-              //   (d.key == "Germany (FRG)"){ return "#d8a7ba"}
-              else {return colorScale["Other"]}          
-            })
+        function(d){
+          if(d.key == "EU"){ return colorScale["EU"]}
+            else {return colorScale["Other"]}          
+        })
 
     g.selectAll(".chinaRussia")
       .transition()
       .duration(500)
-      .style("opacity",0)
-
-    
-
-
-
-    
+      .style("opacity",0)    
   }
 
   function cleanChinaLine(){
@@ -1451,7 +1274,7 @@ var scrollVis = function() {
 
   function showMyanmarLine(){
 
-     g.select(".embargoMyanmar")
+    g.select(".embargoMyanmar")
       .transition()
       .duration(700)
       .attr("width",0)
@@ -1484,19 +1307,16 @@ var scrollVis = function() {
       .duration(500)
       .style('opacity',0)
 
-    // updateYaxis();
-
     g.selectAll(".titleCountry")
       .transition()
       .duration(500)
       .text(highlightNames.myanmar[7])
 
-
     g.select(".myanmarLine")
-        .transition()
-        .duration(20000)
-        .ease("linear")
-        .style("stroke-dashoffset", 0);
+      .transition()
+      .duration(20000)
+      .ease("linear")
+      .style("stroke-dashoffset", 0);
 
     svg.selectAll(".chinaannotation")
       .transition()
@@ -1508,12 +1328,6 @@ var scrollVis = function() {
       .transition()
       .duration(500)
       .style("opacity",0)
-
-    // g.select("#chinadot")
-    //   .transition()
-    //   .duration(1000)
-    //   .ease("linear")
-    //   .attr("r", 0)
 
     svg.selectAll(".myanmarannotation")
       .transition()
@@ -1530,8 +1344,6 @@ var scrollVis = function() {
       .duration(500)
       .style("opacity",0)
 
-   
-
     hideChina();
     hideMyanmar();
     cleanChinaLine();
@@ -1539,7 +1351,7 @@ var scrollVis = function() {
 
   function showMyanmar(){
 
-     var barWidth = xAreaScale(new Date("2015")) - xAreaScale(new Date("1991"));
+    var barWidth = xAreaScale(new Date("2015")) - xAreaScale(new Date("1991"));
 
     g.select(".embargoMyanmar")
       .transition()
@@ -1576,9 +1388,7 @@ var scrollVis = function() {
         else if (d.key == "China"){return 0.5}
         else {return 1}          
       })
-
    
-
      svg.selectAll(".myanmarcountry")
       .transition()
       .duration(500)
@@ -1657,18 +1467,12 @@ var scrollVis = function() {
       .transition()
       .duration(500)
       .style('opacity',1)
-  
-   // svg.selectAll(".syriaannotation")
-   //    .transition()
-   //    .duration(500)
-   //    .ease("linear")
-   //    .style("opacity", 0)
 
   }
 
   function showSyriaLine(){
 
-     g.select(".koreaColdWar")
+    g.select(".koreaColdWar")
       .transition()
       .duration(700)
       .style("opacity",1)
@@ -1705,8 +1509,6 @@ var scrollVis = function() {
       .transition()
       .duration(500)
       .style('opacity',1)
-
-    // updateYaxis();
 
     g.selectAll(".titleCountry")
       .transition()
@@ -1758,8 +1560,7 @@ var scrollVis = function() {
       .ease("linear")
       .style("opacity",0)
 
-
-     g.select(".embargoMyanmar")
+    g.select(".embargoMyanmar")
       .transition()
       .duration(700)
       .attr("width",0)
@@ -1806,8 +1607,6 @@ var scrollVis = function() {
       .ease("linear")
       .style("fill","black")
 
-    
-
     svg.selectAll(".syriacountry")
       .transition()
       .duration(500)
@@ -1823,12 +1622,6 @@ var scrollVis = function() {
       .duration(700)
       .ease("linear")
       .style("stroke-dashoffset", 15000);
-
-    g.select("#koreadot")
-      .transition()
-      .duration(1000)
-      .ease("linear")
-      .attr("r", 0)
 
     svg.selectAll(".koreacountry")
       .transition()
@@ -1870,7 +1663,6 @@ var scrollVis = function() {
       .duration(1200)
       .style("opacity",1)
 
-
     g.selectAll(".locator")
       .transition()
       .duration(500)
@@ -1899,7 +1691,7 @@ var scrollVis = function() {
       .duration(500)
       .text(highlightNames.myanmar[5])
 
-     g.select(".annotationCircle")
+    g.select(".annotationCircle")
       .transition()
       .duration(500)
       .style("opacity",0)
@@ -1927,11 +1719,6 @@ var scrollVis = function() {
       .duration(1000)
       .ease("linear")
       .attr("r", 0)
-
-    // svg.selectAll(".syriaannotation")
-    //   .transition()
-    //   .duration(500)
-    //   .style("opacity",0)
 
     svg.selectAll(".syriacountry")
       .transition()
@@ -2037,8 +1824,6 @@ var scrollVis = function() {
   }
 
   function showIranLine(){
-
-    
 
     g.selectAll(".locator")
       .transition()
@@ -2150,34 +1935,6 @@ var scrollVis = function() {
   }
 
 
-  /**
-   * UPDATE FUNCTIONS
-   *
-   * These will be called within a section
-   * as the user scrolls through it.
-   *
-   * We use an immediate transition to
-   * update visual elements based on
-   * how far the user has scrolled
-   *
-   */
-   function updateYaxis(){
-    g.selectAll(".y.axis")
-      .transition()
-      .duration(750)
-      .ease("sin-in-out")
-      .call(yBarScale)
-    }
-
-    // function updateMyanmar(){
-    // g.selectAll(".y.axis")
-    //   .transition()
-    //   .duration(750)
-    //   .call(yAxisBar)
-    // }
-
-
-
 
   /**
    * DATA FUNCTIONS
@@ -2209,18 +1966,10 @@ var scrollVis = function() {
 
    function dataFilter(lineData, country){
     return lineData.filter(
-        function(d){return d.country != "Total" && d.recipient == country;}
-        )
-        return d;
+      function(d){return d.country != "Total" && d.recipient == country;}
+    )
+    return d;
    }
-
-
-
-
-
-
-
-
 
 
   /**
@@ -2266,7 +2015,6 @@ function display(data) {
   // create a new plot and
   // display it
 
-  // console.log(data)
   var plot = scrollVis();
   d3.select("#vis")
     .datum(data)
