@@ -21,7 +21,8 @@ var scrollVis = function() {
   // and margins of the vis area.
   var width = 820;
   var height = 520;
-  var margin = {top:80, left:70, bottom:40, right:55};
+  var margin = {top:80, left:70, bottom:80, right:55};
+  // var margin = {top:0, left:0, bottom:0, right:60};
 
 
   // Keep track of which visualization
@@ -151,25 +152,23 @@ var scrollVis = function() {
     selection.each(function(rawData) {
       // create svg and give it a width and height
       svg = d3.select(this).selectAll("svg").data([rawData]);
-      svg.enter().append("svg").append("g")
+      svg.enter()
+      // .append("div").attr("class","svg-holder")
+      .append("svg").append("g")
 
-      svg.attr("width", width + margin.left + margin.right);
-      svg.attr("height", height + margin.top + margin.bottom);
+      // svg.attr("width", width + margin.left + margin.right);
+      // svg.attr("height", height + margin.top + margin.bottom);
 
-      // svg.attr("width","100%")
-      // .attr("height","100%")
-      // .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
-      // .attr("preserveAspectRatio", "xMinYMax")
+      svg.attr("width","100%")
+      .attr("height","100%")
+      .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
+      .attr("preserveAspectRatio", "xMinYMin")
 
 
       // this group element will be used to contain all
       // other elements.
       g = svg.select("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-    
-
-
 
       
         
@@ -1286,7 +1285,7 @@ var scrollVis = function() {
       .style("opacity", 
           function(d){
             if(d.key == "EU"){ return 1}
-            else {return 0.5}          
+            else {return 0.8}          
           })
 
     g.selectAll(".chinaFrance")
@@ -1341,10 +1340,10 @@ var scrollVis = function() {
       .duration(800)
       // .delay(500)
       .ease("linear")
-      .style("opacity", 
+      .style("fill-opacity", 
           function(d){
             if(d.key == "Russia"){ return 1}
-            else {return .5}
+            else {return .8}
           })
 
     svg.selectAll(".myanmarannotation")
