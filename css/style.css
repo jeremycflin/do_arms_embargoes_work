@@ -183,7 +183,7 @@
   stroke-linecap: round;
   stroke-width: 2.5px;
   stroke:black;
-  stroke-dasharray: 15000,15000;
+  stroke-dasharray: 20000,20000;
   stroke-dashoffset: 20000;
 }
 
@@ -193,7 +193,7 @@
   stroke-linecap: round;
   stroke-width: 2.5px;
   stroke:black;
-  stroke-dasharray: 15000,15000;
+  stroke-dasharray: 20000,20000;
   stroke-dashoffset: 20000;
 }
 
@@ -203,7 +203,7 @@
   stroke-linecap: round;
   stroke-width: 2.5px;
   stroke:black;
-  stroke-dasharray: 15000,15000;
+  stroke-dasharray: 20000,20000;
   stroke-dashoffset: 20000;
 }
 
@@ -213,7 +213,7 @@
   stroke-linecap: round;
   stroke-width: 2.5px;
   stroke:black;
-  stroke-dasharray: 15000,15000;
+  stroke-dasharray: 20000,20000;
   stroke-dashoffset: 20000;
 }
 
@@ -223,7 +223,7 @@
   stroke-linecap: round;
   stroke-width: 2.5px;
   stroke:black;
-  stroke-dasharray: 15000,15000;
+  stroke-dasharray: 20000,20000;
   stroke-dashoffset: 20000;
 }
 
@@ -319,7 +319,7 @@ path.arrow, #arrowhead {
   text-transform: uppercase;
   font-size: 5em;
   color:white;
-  margin-top: 2em;
+  margin-top: 1.5em;
   max-width: 300px;
   margin-left: 1.7em;
  /* margin-right: auto;*/
