@@ -1010,7 +1010,7 @@ var scrollVis = function() {
       .transition()
       .duration(700)
       .ease("linear")
-      .style("stroke-dashoffset", 20000);
+      .style("stroke-dashoffset", 15000);
 
     svg.selectAll(".annotation")
       .transition()
@@ -1064,7 +1064,7 @@ var scrollVis = function() {
 
     g.select("#chinaLine")
       .transition()
-      .duration(20000)
+      .duration(15000)
       .ease("linear")
       .style("stroke-dashoffset", 0);
 
@@ -1201,7 +1201,7 @@ var scrollVis = function() {
       .transition()
       .duration(900)
       .ease("linear")
-      .style("stroke-dashoffset", 20000);
+      .style("stroke-dashoffset", 15000);
 
     g.select(".chinaY")
       .transition()
@@ -1268,7 +1268,7 @@ var scrollVis = function() {
       .transition()
       .duration(700)
       .ease("linear")
-      .style("stroke-dashoffset", 20000);
+      .style("stroke-dashoffset", 15000);
 
   }
 
@@ -1314,7 +1314,7 @@ var scrollVis = function() {
 
     g.select(".myanmarLine")
       .transition()
-      .duration(20000)
+      .duration(15000)
       .ease("linear")
       .style("stroke-dashoffset", 0);
 
@@ -1443,7 +1443,7 @@ var scrollVis = function() {
       .transition()
       .duration(700)
       .ease("linear")
-      .style("stroke-dashoffset", 20000);
+      .style("stroke-dashoffset", 15000);
 
     g.selectAll(".layersyanmar")
       .transition()
@@ -1522,7 +1522,7 @@ var scrollVis = function() {
 
     g.select(".syriaLine")
       .transition()
-      .duration(20000)
+      .duration(15000)
       .ease("linear")
       .style("stroke-dashoffset", 0);
 
@@ -1530,7 +1530,7 @@ var scrollVis = function() {
       .transition()
       .duration(700)
       .ease("linear")
-      .style("stroke-dashoffset", 20000);
+      .style("stroke-dashoffset", 15000);
 
     hideMyanmar()
 
@@ -1621,7 +1621,7 @@ var scrollVis = function() {
       .transition()
       .duration(700)
       .ease("linear")
-      .style("stroke-dashoffset", 20000);
+      .style("stroke-dashoffset", 15000);
 
     svg.selectAll(".koreacountry")
       .transition()
@@ -1698,7 +1698,7 @@ var scrollVis = function() {
 
     g.select(".koreaLine")
       .transition()
-      .duration(20000)
+      .duration(15000)
       .ease("linear")
       .style("stroke-dashoffset", 0);
 
@@ -1706,7 +1706,7 @@ var scrollVis = function() {
       .transition()
       .duration(700)
       .ease("linear")
-      .style("stroke-dashoffset", 20000);
+      .style("stroke-dashoffset", 15000);
 
     g.selectAll(".layersyria")
       .transition()
@@ -1786,7 +1786,7 @@ var scrollVis = function() {
       .transition()
       .duration(700)
       .ease("linear")
-      .style("stroke-dashoffset", 20000);
+      .style("stroke-dashoffset", 15000);
 
     var barWidth = xAreaScale(new Date("2015")) - xAreaScale(new Date("2006"));
 
@@ -1857,7 +1857,7 @@ var scrollVis = function() {
       .transition()
       .duration(700)
       .ease("linear")
-      .style("stroke-dashoffset", 20000);
+      .style("stroke-dashoffset", 15000);
 
      g.select(".iranLine")
       .transition()
