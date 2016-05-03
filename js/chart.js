@@ -236,6 +236,13 @@ var scrollVis = function() {
         .attr("class","locator")
         .attr("id","twelve") 
 
+      g.append("circle")
+        .attr("r",5)
+        .attr("cx",width + 30)
+        .attr("cy",370)  
+        .attr("class","locator")
+        .attr("id","thirteen") 
+
 
       var lineData = getData(rawData);
 
@@ -952,6 +959,7 @@ var scrollVis = function() {
     activateFunctions[10] = showKoreaLayer;
     activateFunctions[11] = showIranLine;
     activateFunctions[12] = showIranLayer;
+    activateFunctions[13] = showThirteen;
 
     // updateFunctions are called while
     // in a particular section to update
@@ -959,7 +967,7 @@ var scrollVis = function() {
     // Most sections do not need to be updated
     // for all scrolling and so are set to
     // no-op functions.
-    for(var i = 0; i < 13; i++) {
+    for(var i = 0; i < 14; i++) {
       updateFunctions[i] = function() {};
 
     }
@@ -1934,6 +1942,21 @@ var scrollVis = function() {
       .style("opacity",1)
   }
 
+  function showThirteen(){
+      g.selectAll(".locator")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill","none")
+      .style("opacity",1)
+
+       g.select("#thirteen")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .style("fill","black")
+
+  }
 
 
   /**
