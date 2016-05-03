@@ -18,7 +18,11 @@
 .pattern{
   position:absolute;
 }
+#fix-margin-btm{
+  margin-bottom: 0;
+  padding-bottom: 0;
 
+}
 /*svg{
   outline: 1px solid black;
 }*/
@@ -113,7 +117,7 @@
 }
 
 .axis_lable{
-   font-family:"Georgia";
+ /*  font-size:29px;*/
    opacity:0;
   /*text-transform: uppercase;*/
 }
