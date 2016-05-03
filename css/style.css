@@ -367,3 +367,13 @@ span{
   stroke-dasharray:2,2;
   fill:none;
 }
+
+.thanks{
+  /*color:#7e7e7e;*/
+  /*font-family: "Roboto","TiemposTextWeb-Regular","Georgia";*/
+  font-size: 14px;
+}
+
+hr{
+  margin-top: 70px;
+}
