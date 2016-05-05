@@ -97,22 +97,22 @@ var scrollVis = function() {
       yAreaScale = d3.scale.linear().range([height, 0])
   
   var xAxisLine = d3.svg.axis()
-    .scale(xLineScale)
+    .scale(xLineScale) 
     .orient("bottom")
     .ticks(10),
 
   yAxis = d3.svg.axis()
-    .scale(yLineScale)
+    .scale(yAreaScale)//originally i used ylinescale, now i am just testing
     .orient("left")
     .ticks(6);
 
   //line
-  var valueline = d3.svg.line().interpolate("basis")
+  var valueline = d3.svg.line()
     .x(function(d) { return xLineScale(d.year); })
     .y(function(d) { return yLineScale(d.value); });
 
 
-  var area  = d3.svg.area().interpolate("basis"),
+  var area  = d3.svg.area(),
     stack = d3.layout.stack(),
     nest = d3.nest().key(function(d) { return d.country; });
 
@@ -383,8 +383,8 @@ var scrollVis = function() {
       .attr("width", width)
       .attr("height", height)
       .text("Million dollar worth of arms into")
-      .attr("class", "axis_lable")
-      .style("font-size",13)
+      .attr("class", "axis_lable sub-label")
+      // .style("font-size",15)
 
 
      g.append("text")
@@ -394,8 +394,8 @@ var scrollVis = function() {
       .attr("height", height)
       .text(highlightNames.myanmar[0])
       .attr("class", "axis_lable titleCountry")
-      .style("font-size",35)
-      .style("font-family","Roboto")
+      // .style("font-size",35)
+      // .style("font-family","Roboto")
 
     
     function myanmarArea (){
@@ -426,6 +426,11 @@ var scrollVis = function() {
           else {return colorScale["Other"]}          
         })
           .attr("d", function(d) {return area(d.values); })
+
+        g.append("g")
+          .call(yAxis)
+          .attr('class','myanmarY axis grid')
+          .style('opacity',0)
 
       function drawMyanmarLine(){
         xLineScale.domain(d3.extent(data, function(d) { return d.year; }));
@@ -492,10 +497,10 @@ var scrollVis = function() {
           .style("text-align","center")
 
 
-        g.append("g")
-          .call(yAxis)
-          .attr('class','myanmarY axis grid')
-          .style('opacity',0)
+        // g.append("g")
+        //   .call(yAxis)
+        //   .attr('class','myanmarY axis grid')
+        //   .style('opacity',0)
 
           }
 
@@ -532,9 +537,15 @@ var scrollVis = function() {
           })
         .attr("d", function(d) {return area(d.values); })
 
+       g.append("g")
+          .call(yAxis)
+          .attr('class','syriaY axis grid')
+          .style('opacity',0)
+
       function drawSyriaLine(){
         xLineScale.domain(d3.extent(data, function(d) { return d.year; }));
         yLineScale.domain([0, d3.max(data, function(d) { return d.y0 + d.y; })]);
+
 
         g.append("path")      
           .attr("class", "syriaLine") 
@@ -600,10 +611,10 @@ var scrollVis = function() {
           .style("font-weight",400)
           .style("text-align","center")
 
-        g.append("g")
-          .call(yAxis)
-          .attr('class','syriaY axis grid')
-          .style('opacity',0)
+        // g.append("g")
+        //   .call(yAxis)
+        //   .attr('class','syriaY axis grid')
+        //   .style('opacity',0)
 
       }
       setTimeout(drawSyriaLine,100)
@@ -614,6 +625,7 @@ var scrollVis = function() {
 
       xAreaScale.domain(d3.extent(data, function(d) { return d.year; }));
       yAreaScale.domain([0, d3.max(data, function(d) { return d.y0 + d.y; })]);
+
 
       var barWidth = xAreaScale(new Date("1991")) - xAreaScale(new Date("1980"));
 
@@ -649,6 +661,11 @@ var scrollVis = function() {
             else {return colorScale["Other"]}          
           })
         .attr("d", function(d) {return area(d.values); })
+
+       g.append("g")
+          .call(yAxis)
+          .attr('class','koreaY axis grid')
+          .style('opacity',0)
 
       function drawKoreaLine(){
         xLineScale.domain(d3.extent(data, function(d) { return d.year; }));
@@ -713,10 +730,7 @@ var scrollVis = function() {
           .style("font-weight",400)
           .style("text-align","center")
 
-        g.append("g")
-          .call(yAxis)
-          .attr('class','koreaY axis grid')
-          .style('opacity',0)
+       
 
 
       }
@@ -727,6 +741,7 @@ var scrollVis = function() {
       var data = dataFilter(lineData, countryList[4])
       xAreaScale.domain(d3.extent(data, function(d) { return d.year; }));
       yAreaScale.domain([0, d3.max(data, function(d) { return d.y0 + d.y; })]);
+        // yLineScale.domain([0, d3.max(data, function(d) { return Math.max( d.value); })]) 
 
 
       g.append("rect")
@@ -753,9 +768,16 @@ var scrollVis = function() {
           })
         .attr("d", function(d) {return area(d.values); })
 
+       g.append("g")
+          .call(yAxis)
+          .attr('class','iranY axis grid')
+          .style('opacity',0)
+
       function drawIranLine(){
+        // var data =lineData.filter(function(d){return d.recipient == "Iran";})
         xLineScale.domain(d3.extent(data, function(d) { return d.year; }));
         yLineScale.domain([0, d3.max(data, function(d) { return d.y0 + d.y; })]);
+        // yLineScale.domain([0, d3.max(data, function(d) { return Math.max( d.value); })]) 
 
         g.append("path")      
           .attr("class", "iranLine") 
@@ -818,10 +840,10 @@ var scrollVis = function() {
           .style("font-weight",400)
           .style("text-align","center")
 
-         g.append("g")
-          .call(yAxis)
-          .attr('class','iranY axis grid')
-          .style('opacity',0)
+         // g.append("g")
+         //  .call(yAxis)
+         //  .attr('class','iranY axis grid')
+         //  .style('opacity',0)
 
       }
       setTimeout(drawIranLine,100)
