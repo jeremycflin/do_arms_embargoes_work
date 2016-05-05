@@ -363,11 +363,31 @@ hr{
 
 @media (max-width: 400px){
   #g-mobile-3-china-total-300-graphic{
-    display:none;
-  }
-  #g-mobile-3-china-total-300_copy{
     display:block;
   }
+/*  #g-mobile-3-china-total-300_copy{
+    display:block;
+  }*/
+
+  #landing{
+    max-height: 500px;
+  }
+
+  .title{
+    font-size: 28px;
+    font-weight: 500;
+    text-transform: uppercase;
+/*    margin-bottom: 20px;*/
+  }
+
+  #mobile p{
+    font-family: "Georgia";
+    font-size:17px;
+    margin-top: 10px;
+  }
+  hr{
+  margin-top: 30px;
+}
 }
 
 
