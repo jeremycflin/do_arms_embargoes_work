@@ -6,7 +6,9 @@
   margin-left: 170%;
 }
 
-
+.sub-label{
+  font-size: 15px;
+}
 .extra-padding{
   margin-top: 20px;
 }
@@ -135,7 +137,9 @@
   stroke-width:0;
 }
 
-
+.titleCountry{
+  font-size:35px;
+}
 
 .axis{
   font-size: 13px;
@@ -191,6 +195,7 @@
   stroke-dashoffset: 20000;
 }
 
+
 .syriaLine{
   fill: none;
   stroke-linejoin: round;
@@ -231,35 +236,6 @@
   stroke-dashoffset: 20000;
 }
 
-/*#china{
-  background-color:rgba(190, 108, 141,.6);
-  color:black;
-}
-
-#korea{
-  background:rgb(186, 215, 46);
-  color:black;
-  opacity:.7;
-}
-
-#iran{
-  background:rgba(254,194,65,.8);
-  color:black;
-  opacity:.7;
-}
-
-#myanmar{
-  background:#8babe5;
-  color:black;
-  opacity:.7;
-}
-
-#syria{
-  background:rgba(157,91,48,.4);
-  color:black;
-  opacity:.9;
-}
-*/
 .layers{
   stroke:white;
   stroke-width:0;
@@ -269,25 +245,6 @@
   /* text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;*/
   font-weight: 500;
 }
-
-/*.axis path,
-.axis line {
-  fill: none;
-  stroke: #eee;
-  stroke-width: 1;
-  shape-rendering: crispEdges;
-}
-
-.grid path{
-  stroke-width:1;
-}*/
-
-/*.embargoChina{
-  stroke:black;
-  stroke-width: 3px;
-  stroke-dasharray: 2,2;
-  fill:none;
-}*/
 
 .grid .tick{
   stroke-width:1px;
@@ -321,7 +278,7 @@ path.arrow, #arrowhead {
 .mainTitle{
   font-family: "Roboto","TiemposTextWeb-Regular","Georgia";
   text-transform: uppercase;
-  font-size: 5em;
+  font-size: 70px;
   color:white;
   margin-top: 1.5em;
   max-width: 300px;
@@ -330,9 +287,9 @@ path.arrow, #arrowhead {
 }
 
 .byline{
-  color:#d3d3d3;
-  margin-left: 5.5em;
-  font-size: 1.6em;
+  color:white;
+  margin-left: 130px;
+  font-size: 20px;
   font-family: "arial";
   text-transform: uppercase;
 }
@@ -374,6 +331,51 @@ span{
   font-size: 14px;
 }
 
+#mobile{
+    display:none;
+  }
+
 hr{
   margin-top: 70px;
+}
+
+@media (max-width: 600px) {
+  .mainTitle {
+    font-size: 40px;
+  }
+
+  .byline{
+    margin-left: 70px;
+  }
+
+  #desktop{
+    display:none;
+  }
+
+  #mobile{
+    display:block;
+  }
+
+
+}
+
+
+
+@media (max-width: 400px){
+  #g-mobile-3-china-total-300-graphic{
+    display:none;
+  }
+  #g-mobile-3-china-total-300_copy{
+    display:block;
+  }
+}
+
+
+@media (max-width: 450px){
+  #g-mobile-3-china-total-300_copy{
+    display:none;
+  }
+  #g-mobile-3-china-total-300-graphic{
+    display:block;
+  }
 }
