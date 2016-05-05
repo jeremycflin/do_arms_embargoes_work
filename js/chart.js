@@ -382,7 +382,7 @@ var scrollVis = function() {
       .attr("y", -50)
       .attr("width", width)
       .attr("height", height)
-      .text("Million dollar worth of arms to")
+      .text("Million dollar worth of arms into")
       .attr("class", "axis_lable")
       .style("font-size",13)
 
