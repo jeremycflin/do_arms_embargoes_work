@@ -352,21 +352,53 @@ hr{
 }
 
 .mobile .title {
-    font-size: 2em;
+    font-size: 3rem;
     font-weight: 500;
     text-transform: uppercase;
   }
 
 .mobile p{
     font-family: "Georgia";
-    font-size:1.5em;
+    font-size:2rem;
     margin-top: 10px;
   }
 
 .mobile .byline{
-    margin-left: 70px;
+    margin-left: 50px;
   }
 
+#landing-mobile{
+  display:none;
+}
+
+.mobile .mainTitle{
+  width:250px;
+  font-size: 45px;
+  margin-left:1em;
+}
+
+.mobile #landing-mobile{
+  display:block;
+  background-image: url(../assets/test2.jpg);
+ /* background-attachment: fixed;*/
+  background-position: bottom;
+  min-height: 400px;
+  width:auto;
+  padding:0;
+  background-size: cover;
+}
+
+.mobile .extra-padding-top{
+  margin-top: 1.5em;
+}
+
+
+
+.mobile a{
+  text-decoration: none;
+  border-bottom: 2px solid #B21F26;
+  color:black;
+}
 /*
 @media (max-width: 600px) {
   .mainTitle {
