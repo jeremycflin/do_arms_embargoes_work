@@ -331,13 +331,33 @@ span{
   font-size: 14px;
 }
 
-#mobile{
+/*#mobile{
     display:none;
-  }
+  }*/
+
+/*.mobile #mobile{
+  display:block;
+}*/
+
+.mobile #desktop{
+  display:none;
+}
 
 hr{
   margin-top: 70px;
 }
+
+.mobile .mainTitle {
+    font-size: 28px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+.mobile p{
+    font-family: "Georgia";
+    font-size:17px;
+    margin-top: 10px;
+  }
 
 @media (max-width: 600px) {
   .mainTitle {
@@ -356,28 +376,14 @@ hr{
     display:block;
   }
 
-
-}
-
-
-
-@media (max-width: 400px){
-  #g-mobile-3-china-total-300-graphic{
-    display:block;
-  }
-/*  #g-mobile-3-china-total-300_copy{
-    display:block;
-  }*/
-
   #landing{
-    max-height: 500px;
+    display:none;
   }
 
-  .title{
+   .title{
     font-size: 28px;
     font-weight: 500;
     text-transform: uppercase;
-/*    margin-bottom: 20px;*/
   }
 
   #mobile p{
@@ -391,11 +397,39 @@ hr{
 }
 
 
-@media (max-width: 450px){
+/*
+@media (max-width: 400px){
+  #g-mobile-3-china-total-300-graphic{
+    display:block;
+  }
+
+
+  #landing{
+    display:none;
+  }
+
+  .title{
+    font-size: 28px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  #mobile p{
+    font-family: "Georgia";
+    font-size:17px;
+    margin-top: 10px;
+  }
+  hr{
+  margin-top: 30px;
+}
+}*/
+
+
+/*@media (max-width: 450px){
   #g-mobile-3-china-total-300_copy{
     display:none;
   }
   #g-mobile-3-china-total-300-graphic{
     display:block;
   }
-}
+}*/

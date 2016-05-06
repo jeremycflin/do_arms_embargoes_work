@@ -1,8 +1,13 @@
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  $("body").addClass("mobile")
+  $("#desktop").remove()
+  $("#landing").remove()
+  
+}
 
 jQuery(document).ready(function($){
   $(window).on("load resize", function(){ 
-    var s = skrollr.init();
-  });  
+    var s = skrollr.init();})
 });
 
 var scrollVis = function() {
