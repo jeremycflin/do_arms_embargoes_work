@@ -267,7 +267,7 @@ path.arrow, #arrowhead {
 
 #landing{
   background-image: url(../assets/test2.jpg);
-  background-attachment: fixed;
+ /* background-attachment: fixed;*/
   background-position: center;
   min-height: 900px;
   width:auto;
@@ -343,12 +343,16 @@ span{
   display:none;
 }
 
+#mobile{
+  display:none;
+}
+
 hr{
   margin-top: 70px;
 }
 
-.mobile .mainTitle {
-    font-size: 28px;
+.mobile .title {
+    font-size: 40px;
     font-weight: 500;
     text-transform: uppercase;
   }
@@ -358,6 +362,8 @@ hr{
     font-size:17px;
     margin-top: 10px;
   }
+
+
 
 @media (max-width: 600px) {
   .mainTitle {
@@ -380,7 +386,7 @@ hr{
     display:none;
   }
 
-   .title{
+  .title{
     font-size: 28px;
     font-weight: 500;
     text-transform: uppercase;
@@ -393,7 +399,7 @@ hr{
   }
   hr{
   margin-top: 30px;
-}
+  }
 }
 
 
