@@ -2,6 +2,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
   $("body").addClass("mobile")
   $("#desktop").remove()
   $("#landing").remove()
+  $("#mobile").css("display", "block");
   
 }
 
