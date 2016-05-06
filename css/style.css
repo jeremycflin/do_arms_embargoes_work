@@ -267,7 +267,7 @@ path.arrow, #arrowhead {
 
 #landing{
   background-image: url(../assets/test2.jpg);
-  background-attachment: fixed;
+ /* background-attachment: fixed;*/
   background-position: center;
   min-height: 900px;
   width:auto;
