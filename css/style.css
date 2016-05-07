@@ -269,7 +269,7 @@ path.arrow, #arrowhead {
   background-image: url(../assets/test2.jpg);
  /* background-attachment: fixed;*/
   background-position: center;
-  min-height: 900px;
+  min-height: 820px;
   width:auto;
   padding:0;
   background-size: cover;
@@ -398,6 +398,20 @@ hr{
   text-decoration: none;
   border-bottom: 2px solid #B21F26;
   color:black;
+}
+
+#mobile #g-mobile-3-box img{
+  max-width:300px;
+}
+
+.mobile .g-artboard{
+  max-width:300px;
+}
+
+.mobile .thanks{
+       color: #7e7e7e; 
+     font-family: "Roboto","TiemposTextWeb-Regular","Georgia"; 
+    font-size: 14px;
 }
 /*
 @media (max-width: 600px) {
