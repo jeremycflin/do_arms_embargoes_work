@@ -52,8 +52,8 @@ var scrollVis = function() {
 
   var arrowPos = {
     china:[[220,520],[260,570]],
-    myanmar:[[110,530],[120,570]],
-    syria:[[710,500],[755,540]],
+    myanmar:[[110,530],[97,590]],
+    syria:[[730,500],[759,552]],
     syriaAnno:[[110,550],[110,580]],
     korea:[[610,490],[670,570]],
     koreaAnno:[[295,215],[270,250]],
@@ -113,12 +113,12 @@ var scrollVis = function() {
     .ticks(6);
 
   //line
-  var valueline = d3.svg.line()
+  var valueline = d3.svg.line().interpolate("step-after")
     .x(function(d) { return xLineScale(d.year); })
     .y(function(d) { return yLineScale(d.value); });
 
 
-  var area  = d3.svg.area(),
+  var area  = d3.svg.area().interpolate("step-after")
     stack = d3.layout.stack(),
     nest = d3.nest().key(function(d) { return d.country; });
 
@@ -462,7 +462,7 @@ var scrollVis = function() {
           .style("text-align","center")
 
         g.append("text")
-          .attr("x", xLineScale(myanmarnaData[10].year)- 5 )
+          .attr("x", xLineScale(myanmarnaData[11].year)- 10 )
           .attr("y", yLineScale(10))
           .attr("width", width)
           .attr("height", height)
@@ -472,7 +472,7 @@ var scrollVis = function() {
           .style("text-align","center")
 
         g.append("text")
-          .attr("x", xLineScale(myanmarnaData[14].year) )
+          .attr("x", xLineScale(myanmarnaData[16].year) )
           .attr("y", yLineScale(60))
           .attr("width", width)
           .attr("height", height)
@@ -482,7 +482,7 @@ var scrollVis = function() {
           .style("text-align","center")
 
         g.append("text")
-          .attr("x", xLineScale(myanmarnaData[24].year) )
+          .attr("x", xLineScale(myanmarnaData[25].year) )
           .attr("y", yLineScale(80))
           .attr("width", width)
           .attr("height", height)
@@ -598,7 +598,7 @@ var scrollVis = function() {
           .style("opacity",0);
 
         g.append("text")
-          .attr("x", xLineScale(myanmarnaData[30].year) )
+          .attr("x", xLineScale(myanmarnaData[31].year) )
           .attr("y", yLineScale(200))
           .attr("width", width)
           .attr("height", height)
@@ -688,7 +688,7 @@ var scrollVis = function() {
 
 
         g.append("text")
-          .attr("x", xLineScale(koreaData[4].year) + 10 )
+          .attr("x", xLineScale(koreaData[6].year) + 10 )
           .attr("y", yLineScale(250))
           .attr("width", width)
           .attr("height", height)
@@ -697,8 +697,8 @@ var scrollVis = function() {
           .style("opacity",0);
 
         g.append("text")
-          .attr("x", xLineScale(koreaData[14].year) )
-          .attr("y", yLineScale(20))
+          .attr("x", xLineScale(koreaData[12].year) + 10 )
+          .attr("y", yLineScale(0))
           .attr("width", width)
           .attr("height", height)
           .text(highlightNames.myanmar[1])
@@ -706,8 +706,8 @@ var scrollVis = function() {
           .style("opacity",0)
 
         g.append("text")
-          .attr("x", xLineScale(koreaData[9].year) )
-          .attr("y", yLineScale(830))
+          .attr("x", xLineScale(koreaData[7].year) )
+          .attr("y", yLineScale(750))
           .attr("width", width)
           .attr("height", height)
           .text(highlightNames.myanmar[0])
@@ -796,7 +796,7 @@ var scrollVis = function() {
 
 
         g.append("text")
-          .attr("x", xLineScale(koreaData[4].year) )
+          .attr("x", xLineScale(koreaData[5].year) - 10 )
           .attr("y", yLineScale(50))
           .attr("width", width)
           .attr("height", height)
@@ -806,8 +806,8 @@ var scrollVis = function() {
           .style("text-align","center")
 
         g.append("text")
-          .attr("x", xLineScale(koreaData[3].year) + 15 )
-          .attr("y", yLineScale(460))
+          .attr("x", xLineScale(koreaData[3].year)  )
+          .attr("y", yLineScale(430))
           .attr("width", width)
           .attr("height", height)
           .text(highlightNames.myanmar[0])
@@ -816,8 +816,8 @@ var scrollVis = function() {
           .style("text-align","center")
 
         g.append("text")
-          .attr("x", xLineScale(koreaData[20].year) )
-          .attr("y", yLineScale(250))
+          .attr("x", xLineScale(koreaData[19].year) )
+          .attr("y", yLineScale(220))
           .attr("width", width)
           .attr("height", height)
           .text(highlightNames.myanmar[1])
@@ -900,12 +900,12 @@ var scrollVis = function() {
       .attr("class","koreaannotation annotation koreacountry koreamarker")
       .style("opacity",0)
 
-    svg.append("path")
-      .attr('marker-end', 'url(#arrowhead)')
-      .datum(arrowPos.koreaAnno)
-      .attr("d", swoopy)
-      .attr("class","koreaannotation annotation koreacountry koreamarker")
-      .style("opacity",0)
+    // svg.append("path")
+    //   .attr('marker-end', 'url(#arrowhead)')
+    //   .datum(arrowPos.koreaAnno)
+    //   .attr("d", swoopy)
+    //   .attr("class","koreaannotation annotation koreacountry koreamarker")
+    //   .style("opacity",0)
 
     svg.append("path")
       .attr('marker-end', 'url(#arrowhead)')
@@ -935,8 +935,8 @@ var scrollVis = function() {
       .style("text-align","center")
 
     g.append("text")
-      .attr("x", xLineScale(chinaData[31].year) + 5 )
-      .attr("y", yLineScale(400))
+      .attr("x", xLineScale(chinaData[31].year) + 30 )
+      .attr("y", yLineScale(300))
       .attr("width", width)
       .attr("height", height)
       .text(highlightNames.china[2])
