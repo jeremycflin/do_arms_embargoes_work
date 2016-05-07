@@ -6,10 +6,10 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
   
 }
 
-// jQuery(document).ready(function($){
-//   $(window).on("load resize", function(){ 
-//     var s = skrollr.init();})
-// });
+jQuery(document).ready(function($){
+  $(window).on("load resize", function(){ 
+    var s = skrollr.init();})
+});
 
 var scrollVis = function() {
   // constants to define the size
