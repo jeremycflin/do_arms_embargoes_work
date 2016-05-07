@@ -359,7 +359,7 @@ hr{
 
 .mobile p{
     font-family: "Georgia";
-    font-size:2rem;
+    font-size:2.5rem;
     margin-top: 10px;
   }
 
@@ -400,18 +400,18 @@ hr{
   color:black;
 }
 
-#mobile #g-mobile-3-box img{
+/*#mobile #g-mobile-3-box img{
   max-width:300px;
 }
-
+*/
 .mobile .g-artboard{
   max-width:300px;
 }
 
 .mobile .thanks{
-       color: #7e7e7e; 
-     font-family: "Roboto","TiemposTextWeb-Regular","Georgia"; 
-    font-size: 14px;
+  color: #7e7e7e; 
+  font-family: "Roboto","TiemposTextWeb-Regular","Georgia"; 
+/*    font-size: 14px;*/
 }
 /*
 @media (max-width: 600px) {
