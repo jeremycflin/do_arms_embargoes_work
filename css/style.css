@@ -339,7 +339,7 @@ span{
   display:block;
 }*/
 
-.mobile #desktop{
+.mobile .desktop{
   display:none;
 }
 
@@ -364,7 +364,8 @@ hr{
   }
 
 .mobile .byline{
-    margin-left: 50px;
+    margin-left: 133px;
+    font-size:15px;
   }
 
 #landing-mobile{
@@ -374,7 +375,7 @@ hr{
 .mobile .mainTitle{
   width:250px;
   font-size: 45px;
-  margin-left:1em;
+  margin-left:3em;
 }
 
 .mobile #landing-mobile{
@@ -405,7 +406,8 @@ hr{
 }
 */
 .mobile .g-artboard{
-  max-width:300px;
+  max-width:450px;
+  margin-top: 50px;
 }
 
 .mobile .thanks{
